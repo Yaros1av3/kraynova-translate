@@ -1,3 +1,4 @@
+// translations.js and main script logic
 const translations = {
     ru: {
         nav_services: "Услуги",
