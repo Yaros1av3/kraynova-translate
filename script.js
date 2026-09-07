@@ -10,7 +10,7 @@ const translations = {
         hero_title: "ПЕРЕВОДЧИК В БЕРЛИНЕ",
         hero_subtitle: "Сопровождаю и помогаю решить языковые вопросы быстро, понятно и надежно. Ваш надежный языковой помощник в любых ситуациях.",
         btn_call: "Позвонить",
-        btn_phone: "01575 6459556",
+        btn_phone: "Связаться",
         
         services_title: "Направления помощи",
         services_subtitle: "Помогаю людям из разных стран с уважением, терпением и вниманием",
@@ -82,7 +82,7 @@ const translations = {
         hero_title: "DOLMETSCHER IN BERLIN",
         hero_subtitle: "Begleitung und Hilfe bei sprachlichen Fragen — schnell, verständlich und zuverlässig.",
         btn_call: "Anrufen",
-        btn_phone: "01575 6459556",
+        btn_phone: "Kontaktieren",
         
         services_title: "Leistungen",
         services_subtitle: "Hilfe für Menschen aus verschiedenen Ländern mit Respekt, Geduld und Aufmerksamkeit",
@@ -150,19 +150,18 @@ function updateFormSelect(lang) {
     if (!topicSelect) return;
     const currentVal = topicSelect.value;
     topicSelect.innerHTML = `
-        <option value="topic_1">${translations[lang].topic_1}</option>
-        <option value="topic_2">${translations[lang].topic_2}</option>
-        <option value="topic_3">${translations[lang].topic_3}</option>
-        <option value="topic_4">${translations[lang].topic_4}</option>
-        <option value="topic_5">${translations[lang].topic_5}</option>
+        <option value="Государственные учреждения">${translations[lang].topic_1}</option>
+        <option value="Медицинские учреждения">${translations[lang].topic_2}</option>
+        <option value="Заполнение документов">${translations[lang].topic_3}</option>
+        <option value="Телефонные переговоры">${translations[lang].topic_4}</option>
+        <option value="Другой вопрос">${translations[lang].topic_5}</option>
     `;
-    topicSelect.value = currentVal || "topic_1";
+    topicSelect.value = currentVal || "Государственные учреждения";
 }
 
 function setLanguage(lang) {
     if (!translations[lang]) lang = 'ru';
     
-    // Сохраняем выбор в localStorage
     localStorage.setItem('preferred_lang', lang);
 
     document.querySelectorAll('[data-lang-switch]').forEach(btn => {
@@ -185,18 +184,15 @@ function setLanguage(lang) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Определяем язык (сохраненный или по умолчанию 'ru')
     const savedLang = localStorage.getItem('preferred_lang') || 'ru';
     setLanguage(savedLang);
 
-    // Переключение языка по кнопкам
     document.querySelectorAll('[data-lang-switch]').forEach(button => {
         button.addEventListener('click', () => {
             setLanguage(button.getAttribute('data-lang-switch'));
         });
     });
 
-    // Логика мобильного меню (гамбургер)
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
 
@@ -205,7 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.toggle('active');
         });
 
-        // Закрывать меню при клике на любую ссылку в навигации
         nav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 nav.classList.remove('active');
@@ -213,14 +208,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Обработка кликов по инлайн-кнопкам в карточках услуг
     document.querySelectorAll('.card-inline-btn').forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
-            const targetTopic = btn.getAttribute('data-topic');
+            const targetTopicAttr = btn.getAttribute('data-topic');
+            let mappedTopic = "Государственные учреждения";
+            
+            if (targetTopicAttr === 'topic_2') mappedTopic = "Медицинские учреждения";
+            else if (targetTopicAttr === 'topic_3') mappedTopic = "Заполнение документов";
+            else if (targetTopicAttr === 'topic_4') mappedTopic = "Телефонные переговоры";
+            else if (targetTopicAttr === 'topic_5') mappedTopic = "Другой вопрос";
+
             const topicSelect = document.getElementById('topicSelect');
-            if (topicSelect && targetTopic) {
-                topicSelect.value = targetTopic;
+            if (topicSelect) {
+                topicSelect.value = mappedTopic;
             }
             const contactSection = document.getElementById('contact');
             if (contactSection) {
@@ -229,20 +230,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Обработка отправки формы
     const appointmentForm = document.getElementById('appointmentForm');
     const formStatus = document.getElementById('formStatus');
 
     if (appointmentForm) {
-        appointmentForm.addEventListener('submit', (e) => {
+        appointmentForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const currentLang = document.documentElement.getAttribute('lang') || 'ru';
-            const successMessage = translations[currentLang].form_success;
             
             if (formStatus) {
-                formStatus.textContent = successMessage;
+                formStatus.textContent = currentLang === 'de' ? "Wird gesendet..." : "Отправка...";
             }
-            appointmentForm.reset();
+
+            const data = new FormData(appointmentForm);
+
+            try {
+                const response = await fetch(appointmentForm.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    if (formStatus) {
+                        formStatus.textContent = translations[currentLang].form_success;
+                    }
+                    appointmentForm.reset();
+                } else {
+                    const errorData = await response.json();
+                    if (formStatus) {
+                        formStatus.textContent = errorData.error || (currentLang === 'de' ? "Ein Fehler ist aufgetreten." : "Произошла ошибка при отправке.");
+                    }
+                }
+            } catch (error) {
+                if (formStatus) {
+                    formStatus.textContent = currentLang === 'de' ? "Netzwerkfehler." : "Ошибка сети.";
+                }
+            }
             
             setTimeout(() => {
                 if (formStatus) {

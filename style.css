@@ -1,13 +1,13 @@
 :root {
-    --bg-color: #0d1b2a;         /* Глубокий темно-синий из рекламы */
-    --card-bg: #1b263b;         /* Темно-синий оттенок для карточек */
-    --card-hover: #22304a;
+    --bg-color: #0f131a;        /* Глубокий графитово-темный фон из примера */
+    --card-bg: #161b22;         /* Цвет карточек под стиль примера */
+    --card-hover: #1f2630;
     --text-color: #ffffff;      /* Белый для текста */
-    --text-muted: #94a3b8;      /* Приглушенный серо-голубой для описаний */
-    --accent-color: #1d4ed8;    /* Насыщенный синий акцент под стиль плаката */
-    --accent-secondary: #3b82f6;
-    --accent-gradient: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
-    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --text-muted: #8b949e;      /* Приглушенный серо-голубой для описаний */
+    --accent-color: #f39c12;    /* Яркий оранжевый акцент */
+    --accent-secondary: #f39c12;/* Единый оранжевый акцент */
+    --accent-gradient: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 * {
@@ -40,9 +40,9 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(13, 27, 42, 0.9);
+    background: rgba(15, 19, 26, 0.9);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid #30363d;
     z-index: 1000;
 }
 
@@ -128,7 +128,7 @@ body {
     background: var(--card-bg);
     padding: 6px 12px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #30363d;
 }
 
 .lang-btn {
@@ -164,25 +164,23 @@ body {
 }
 
 .btn-primary {
-    background: var(--accent-gradient);
-    color: #ffffff;
-    box-shadow: 0 4px 15px rgba(29, 78, 216, 0.3);
+    background: var(--accent-color);
+    color: #000000;
 }
 
 .btn-primary:hover {
+    background: #e67e22;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(29, 78, 216, 0.5);
 }
 
 .btn-outline {
     background: transparent;
-    color: var(--text-color);
-    border: 2px solid rgba(59, 130, 246, 0.6);
+    color: var(--accent-secondary);
+    border: 1px solid var(--accent-secondary);
 }
 
 .btn-outline:hover {
-    background: rgba(59, 130, 246, 0.1);
-    border-color: var(--accent-secondary);
+    background: rgba(243, 156, 18, 0.1);
 }
 
 .btn-lg {
@@ -198,19 +196,19 @@ body {
 .hero {
     padding: 160px 0 100px;
     text-align: center;
-    background: radial-gradient(circle at 50% 25%, rgba(29, 78, 216, 0.15) 0%, transparent 65%);
+    background: radial-gradient(circle at 50% 25%, rgba(243, 156, 18, 0.08) 0%, transparent 65%);
 }
 
 .hero-badge {
     display: inline-block;
     padding: 6px 16px;
-    background: rgba(59, 130, 246, 0.15);
+    background: var(--card-bg);
     color: var(--accent-secondary);
     border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 20px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid #30363d;
 }
 
 .hero-title {
@@ -241,21 +239,21 @@ body {
     align-items: center;
     justify-content: center;
     gap: 12px;
-    background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 100%);
-    color: #ffffff;
+    background: var(--card-bg);
+    color: var(--text-color);
     padding: 16px 32px;
     border-radius: 12px;
     font-size: 24px;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
-    transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.2s, border-color 0.2s;
+    border: 1px solid #30363d;
 }
 
 .hero-call-box:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 25px rgba(29, 78, 216, 0.6);
+    border-color: var(--accent-secondary);
+    color: var(--accent-secondary);
 }
 
 /* Quick Nav */
@@ -275,7 +273,7 @@ body {
     padding: 8px 16px;
     background: var(--card-bg);
     color: var(--text-muted);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #30363d;
     border-radius: 20px;
     text-decoration: none;
     font-size: 14px;
@@ -285,14 +283,14 @@ body {
 
 .quick-link:hover {
     color: var(--accent-secondary);
-    border-color: rgba(59, 130, 246, 0.4);
+    border-color: var(--accent-secondary);
     background: var(--card-hover);
 }
 
 .quick-link.highlight {
-    background: rgba(29, 78, 216, 0.2);
+    background: rgba(243, 156, 18, 0.1);
     color: var(--accent-secondary);
-    border-color: rgba(59, 130, 246, 0.4);
+    border-color: var(--accent-secondary);
 }
 
 /* General Section Titles */
@@ -311,7 +309,7 @@ body {
 /* Services Section */
 .services {
     padding: 100px 0;
-    background: rgba(27, 38, 59, 0.4);
+    background: rgba(22, 27, 34, 0.4);
 }
 
 .services .section-title, 
@@ -329,7 +327,7 @@ body {
     background: var(--card-bg);
     padding: 40px 30px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid #30363d;
     transition: transform 0.3s, border-color 0.3s;
     display: flex;
     flex-direction: column;
@@ -337,27 +335,27 @@ body {
 
 .service-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(59, 130, 246, 0.4);
+    border-color: var(--accent-secondary);
 }
 
 .service-icon {
     font-size: 32px;
     margin-bottom: 20px;
     color: var(--accent-secondary);
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(243, 156, 18, 0.1);
     width: 64px;
     height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(243, 156, 18, 0.2);
     transition: transform 0.3s, background 0.3s;
 }
 
 .service-card:hover .service-icon {
     transform: scale(1.05);
-    background: rgba(59, 130, 246, 0.2);
+    background: rgba(243, 156, 18, 0.2);
 }
 
 .service-card h3 {
@@ -422,27 +420,27 @@ body {
     background: var(--card-bg);
     padding: 40px 30px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid #30363d;
     transition: transform 0.3s, border-color 0.3s;
 }
 
 .benefit-item:hover {
     transform: translateY(-5px);
-    border-color: rgba(59, 130, 246, 0.4);
+    border-color: var(--accent-secondary);
 }
 
 .benefit-icon {
     font-size: 28px;
     margin-bottom: 20px;
     color: var(--accent-secondary);
-    background: rgba(59, 130, 246, 0.1);
+    background: rgba(243, 156, 18, 0.1);
     width: 56px;
     height: 56px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    border: 1px solid rgba(243, 156, 18, 0.2);
 }
 
 .benefit-item h3 {
@@ -458,7 +456,7 @@ body {
 /* About Section */
 .about {
     padding: 100px 0;
-    background: rgba(27, 38, 59, 0.4);
+    background: rgba(22, 27, 34, 0.4);
 }
 
 .about-container {
@@ -478,7 +476,7 @@ body {
     background: var(--card-bg);
     padding: 40px;
     border-radius: 16px;
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid #30363d;
     text-align: center;
 }
 
@@ -523,7 +521,7 @@ body {
     background: var(--card-bg);
     padding: 40px;
     border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.04);
+    border: 1px solid #30363d;
 }
 
 .form-group {
@@ -543,7 +541,7 @@ body {
     width: 100%;
     padding: 12px 16px;
     background: var(--bg-color);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #30363d;
     border-radius: 8px;
     color: var(--text-color);
     font-size: 15px;
@@ -573,7 +571,7 @@ body {
 /* Footer & Back to Top */
 .footer {
     padding: 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    border-top: 1px solid #30363d;
     text-align: center;
     color: var(--text-muted);
     font-size: 14px;
@@ -593,14 +591,15 @@ body {
     height: 40px;
     background: var(--card-bg);
     color: var(--accent-secondary);
-    border: 1px solid rgba(59, 130, 246, 0.3);
+    border: 1px solid #30363d;
     border-radius: 50%;
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 .back-to-top:hover {
-    background: rgba(59, 130, 246, 0.2);
+    background: rgba(243, 156, 18, 0.1);
+    border-color: var(--accent-secondary);
     transform: translateY(-3px);
 }
 
@@ -632,7 +631,7 @@ body {
         justify-content: center;
         gap: 25px;
         transition: left 0.3s ease;
-        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-top: 1px solid #30363d;
     }
 
     .nav.active {
