@@ -3,205 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YanaTranslator — Профессиональный устный перевод в Германии</title>
+    <meta name="description" content="Профессиональный переводчик и языковой помощник в Берлине. Сопровождение в ведомства (Jobcenter, Ausländerbehörde), клиники, заполнение документов и телефонные переговоры.">
+    <title>Переводчик в Берлине — Языковой помощник</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Шапка сайта -->
     <header class="header">
         <div class="container header-container">
             <div class="logo">
-                <span class="logo-accent">Yana</span>Translator
+                <span class="logo-accent">BERLIN</span>TRANSLATOR
             </div>
             <nav class="nav">
                 <a href="#services" data-i18n="nav_services">Услуги</a>
                 <a href="#pricing" data-i18n="nav_pricing">Цены</a>
-                <a href="#benefits" data-i18n="nav_benefits">Почему мы</a>
-                <a href="#about" data-i18n="nav_about">О нас</a>
+                <a href="#benefits" data-i18n="nav_benefits">Преимущества</a>
+                <a href="#about" data-i18n="nav_about">Обо мне</a>
                 <a href="#contact" data-i18n="nav_contact">Контакты</a>
             </nav>
             <div class="header-actions">
                 <div class="lang-switcher">
-                    <button class="lang-btn active" data-lang-switch="ru">RU</button>
+                    <button class="lang-btn active" data-lang-switch="ru" aria-label="Russian language">RU</button>
                     <span class="lang-divider">/</span>
-                    <button class="lang-btn" data-lang-switch="de">DE</button>
+                    <button class="lang-btn" data-lang-switch="de" aria-label="German language">DE</button>
                 </div>
-                <a href="#contact" class="btn btn-primary header-btn" data-i18n="btn_term">Записаться</a>
+                <a href="#contact" class="btn btn-primary header-btn" data-i18n="btn_term">Связаться</a>
             </div>
         </div>
     </header>
 
-    <!-- Первый экран (Hero) -->
-    <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-badge" data-i18n="hero_badge">⚡ Профессиональный устный перевод в Германии</div>
-            <h1 class="hero-title" data-i18n="hero_title">Точный устный перевод для вашего бизнеса и встреч</h1>
-            <p class="hero-subtitle" data-i18n="hero_subtitle">Синхронный и последовательный перевод на переговорах, сделках и онлайн-конференциях. Опытная команда дипломированных специалистов.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary btn-lg" data-i18n="btn_call">Связаться с нами</a>
-                <a href="tel:+49300000000" class="btn btn-outline btn-lg" data-i18n="btn_phone">Позвонить сейчас</a>
-            </div>
+    <main>
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="hero-badge" data-i18n="hero_badge">📍 Берлин и окрестности</div>
+                <h1 class="hero-title" data-i18n="hero_title">ПЕРЕВОДЧИК В БЕРЛИНЕ</h1>
+                <p class="hero-subtitle" data-i18n="hero_subtitle">Сопровождаю и помогаю решить языковые вопросы быстро, понятно и надежно. Ваш надежный языковой помощник в любых ситуациях.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary btn-lg"><i class="fa-solid fa-envelope" aria-hidden="true"></i> <span data-i18n="btn_contact">Связаться</span></a>
+                    <a href="tel:+4915756459556" class="btn btn-outline btn-lg"><i class="fa-solid fa-phone" aria-hidden="true"></i> <span data-i18n="btn_call">Позвонить</span></a>
+                </div>
 
-            <!-- Быстрые якорные кнопки для мобильных и быстрого доступа -->
-            <div class="quick-nav">
-                <a href="#services" class="quick-link"><i class="fa-solid fa-comments"></i> <span data-i18n="nav_services">Услуги</span></a>
-                <a href="#pricing" class="quick-link"><i class="fa-solid fa-clock"></i> <span data-i18n="nav_pricing">Цены</span></a>
-                <a href="#benefits" class="quick-link"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="nav_benefits">Почему мы</span></a>
-                <a href="#contact" class="quick-link highlight"><i class="fa-solid fa-calendar-check"></i> <span data-i18n="btn_term">Записаться</span></a>
+                <div class="quick-nav">
+                    <a href="#services" class="quick-link"><i class="fa-solid fa-building-columns" aria-hidden="true"></i> <span data-i18n="nav_services">Услуги</span></a>
+                    <a href="#pricing" class="quick-link"><i class="fa-solid fa-euro-sign" aria-hidden="true"></i> <span data-i18n="nav_pricing">Цены</span></a>
+                    <a href="#benefits" class="quick-link"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> <span data-i18n="nav_benefits">Преимущества</span></a>
+                    <a href="#contact" class="quick-link highlight"><i class="fa-solid fa-envelope" aria-hidden="true"></i> <span data-i18n="nav_contact">Связаться</span></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Секция Услуги -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title" data-i18n="services_title">Наши услуги</h2>
-            <p class="section-subtitle" data-i18n="services_subtitle">Специализируемся исключительно на устном переводе высокого уровня</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
-                    <h3 data-i18n="service_1_title">Последовательный перевод</h3>
-                    <p data-i18n="service_1_desc">Для деловых переговоров, встреч с партнерами, нотариальных сделок и консультаций.</p>
-                    <a href="#contact" class="card-inline-btn" data-i18n="btn_term">Заказать &rarr;</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
-                    <h3 data-i18n="service_2_title">Синхронный перевод</h3>
-                    <p data-i18n="service_2_desc">Для крупных конференций, семинаров, презентаций и официальных мероприятий.</p>
-                    <a href="#contact" class="card-inline-btn" data-i18n="btn_term">Заказать &rarr;</a>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-                    <h3 data-i18n="service_3_title">Онлайн-сопровождение</h3>
-                    <p data-i18n="service_3_desc">Оперативный устный перевод удаленно через Zoom, MS Teams и телефонную связь.</p>
-                    <a href="#contact" class="card-inline-btn" data-i18n="btn_term">Заказать &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция Цены -->
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title" data-i18n="pricing_title">Стоимость услуг</h2>
-            <p class="section-subtitle" data-i18n="pricing_subtitle">Прозрачные тарифы на устный перевод без скрытых платежей</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-clock"></i></div>
-                    <h3 data-i18n="price_1_title">Почасовая оплата</h3>
-                    <div class="price-value" data-i18n="price_1_val">от 00 € / час</div>
-                    <p data-i18n="price_1_desc">Минимальный заказ — 2 часа. Отлично подходит для кратковременных встреч и сделок.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-calendar-day"></i></div>
-                    <h3 data-i18n="price_2_title">Дневной тариф (Full Day)</h3>
-                    <div class="price-value" data-i18n="price_2_val">от 000 € / день</div>
-                    <p data-i18n="price_2_desc">Выгодное решение для полноценного сопровождения мероприятий, конференций и переговоров.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
-                    <h3 data-i18n="price_3_title">Онлайн-формат</h3>
-                    <div class="price-value" data-i18n="price_3_val">от 00 € / час</div>
-                    <p data-i18n="price_3_desc">Оперативное удаленное подключение к видеоконференциям, звонкам и сессиям Zoom/Teams.</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="#contact" class="btn btn-primary" data-i18n="btn_term">Забронировать по тарифу</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция Преимущества (Почему мы) -->
-    <section id="benefits" class="benefits">
-        <div class="container">
-            <h2 class="section-title" data-i18n="benefits_title">Почему выбирают нас</h2>
-            <p class="section-subtitle" data-i18n="benefits_subtitle">Надежность, оперативность и строгая конфиденциальность</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fa-solid fa-user-check"></i></div>
-                    <h3 data-i18n="benefit_1_title">Опытная команда</h3>
-                    <p data-i18n="benefit_1_desc">Проверенные переводчики с профильным образованием и глубоким знанием терминологии.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
-                    <h3 data-i18n="benefit_2_title">Оперативность</h3>
-                    <p data-i18n="benefit_2_desc">Быстро подбираем специалиста под ваш запрос и организуем работу в сжатые сроки.</p>
-                </div>
-                <div class="benefit-item">
-                    <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 data-i18n="benefit_3_title">Конфиденциальность</h3>
-                    <p data-i18n="benefit_3_desc">Полная защита информации и коммерческой тайны на всех этапах сотрудничества.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция О нас -->
-    <section id="about" class="about">
-        <div class="container about-container">
-            <div class="about-text">
-                <h2 class="section-title" data-i18n="about_title">О нашем бюро</h2>
-                <p data-i18n="about_desc_1">Мы работаем в Германии и объединяем профессиональных устных переводчиков. Наша цель — обеспечить безупречную коммуникацию для вашего бизнеса и личных задач без языковых барьеров.</p>
-                <p data-i18n="about_desc_2">Благодаря слаженной работе команды мы можем эффективно распределять задачи и оперативно реагировать на запросы клиентов даже в удаленном формате.</p>
-            </div>
-            <div class="about-card-info">
-                <div class="info-badge">
-                    <span class="info-number">100%</span>
-                    <span data-i18n="info_oral">Исключительно устный перевод (без работы с документами)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция Контакты и Форма (Запись на термин) -->
-    <section id="contact" class="contact">
-        <div class="container contact-container">
-            <div class="contact-info">
-                <h2 class="section-title" data-i18n="contact_title">Свяжитесь с нами</h2>
-                <p data-i18n="contact_subtitle">Запишитесь на консультацию или забронируйте термин по вашему вопросу. Мы ответим в ближайшее время!</p>
-                <div class="contact-details">
-                    <p>📍 <strong>Berlin, Deutschland</strong></p>
-                    <p>📞 Телефон: <a href="tel:+49300000000">+49 (30) 000-00-00</a></p>
-                    <p>✉️ Email: <a href="mailto:info@yanatranslator.de">info@yanatranslator.de</a></p>
-                </div>
-            </div>
-            
-            <div class="contact-form-wrapper">
-                <form id="appointmentForm" class="contact-form">
-                    <div class="form-group">
-                        <label data-i18n="form_name">Ваше имя</label>
-                        <input type="text" id="name" required placeholder="Иван / Hans">
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title" data-i18n="services_title">Направления помощи</h2>
+                <p class="section-subtitle" data-i18n="services_subtitle">Помогаю людям из разных стран с уважением, терпением и вниманием</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-building-columns" aria-hidden="true"></i></div>
+                        <h3 data-i18n="service_1_title">СОПРОВОЖДЕНИЕ В ГОСУДАРСТВЕННЫЕ УЧРЕЖДЕНИЯ</h3>
+                        <p data-i18n="service_1_desc">Jobcenter, Ausländerbehörde, Sozialamt, Jugendamt и другие.</p>
+                        <a href="#contact" class="card-inline-btn" data-topic="topic_1" data-i18n="btn_term">Связаться &rarr;</a>
                     </div>
-                    <div class="form-group">
-                        <label data-i18n="form_phone">Телефон или Email</label>
-                        <input type="text" id="contact_info" required placeholder="+49 ... / email@example.com">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-hospital" aria-hidden="true"></i></div>
+                        <h3 data-i18n="service_2_title">СОПРОВОЖДЕНИЕ В МЕДИЦИНСКИЕ УЧРЕЖДЕНИЯ</h3>
+                        <p data-i18n="service_2_desc">Врачи, клиники, больницы, психологи и другие специалисты.</p>
+                        <a href="#contact" class="card-inline-btn" data-topic="topic_2" data-i18n="btn_term">Связаться &rarr;</a>
                     </div>
-                    <div class="form-group">
-                        <label data-i18n="form_topic">Тема / Вопрос для перевода</label>
-                        <select id="topic">
-                            <option value="business" data-i18n="topic_1">Деловые переговоры</option>
-                            <option value="conference" data-i18n="topic_2">Конференция / Семинар</option>
-                            <option value="online" data-i18n="topic_3">Онлайн-сопровождение (Zoom/Teams)</option>
-                            <option value="other" data-i18n="topic_4">Другой вопрос</option>
-                        </select>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-file-lines" aria-hidden="true"></i></div>
+                        <h3 data-i18n="service_3_title">ЗАПОЛНЕНИЕ ДОКУМЕНТОВ</h3>
+                        <p data-i18n="service_3_desc">Заявления, анкеты, формуляры и многое другое.</p>
+                        <a href="#contact" class="card-inline-btn" data-topic="topic_3" data-i18n="btn_term">Связаться &rarr;</a>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-lg btn-full" data-i18n="form_submit">Забронировать термин</button>
-                    <p id="formStatus" class="form-status"></p>
-                </form>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i></div>
+                        <h3 data-i18n="service_4_title">ТЕЛЕФОННЫЕ ПЕРЕГОВОРЫ</h3>
+                        <p data-i18n="service_4_desc">Перевод звонков, уточнение информации, запись на приём и др.</p>
+                        <a href="#contact" class="card-inline-btn" data-topic="topic_4" data-i18n="btn_term">Связаться &rarr;</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Футер с кнопкой "Наверх" -->
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2 class="section-title" data-i18n="pricing_title">Стоимость услуг</h2>
+                <p class="section-subtitle" data-i18n="pricing_subtitle">Прозрачные тарифы без скрытых платежей</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-clock" aria-hidden="true"></i></div>
+                        <h3 data-i18n="price_1_title">Почасовая оплата</h3>
+                        <div class="price-value" data-i18n="price_1_val">30 € / час</div>
+                        <p data-i18n="price_1_desc">Стандартный тариф за час работы.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-calendar-day" aria-hidden="true"></i></div>
+                        <h3 data-i18n="price_2_title">Дневной тариф</h3>
+                        <div class="price-value" data-i18n="price_2_val">200 € / день</div>
+                        <p data-i18n="price_2_desc">8 часов сопровождения с одним человеком.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
+                        <h3 data-i18n="price_3_title">Синхронный перевод</h3>
+                        <div class="price-value" data-i18n="price_3_val">250 €</div>
+                        <p data-i18n="price_3_desc">Требуется команда из 2 человек.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-laptop" aria-hidden="true"></i></div>
+                        <h3 data-i18n="price_4_title">Онлайн перевод</h3>
+                        <div class="price-value" data-i18n="price_4_val">25 € / час</div>
+                        <p data-i18n="price_4_desc">Удаленный перевод и консультации.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-file-pen" aria-hidden="true"></i></div>
+                        <h3 data-i18n="price_5_title">Заполнение документов</h3>
+                        <div class="price-value" data-i18n="price_5_val">20 – 50 €</div>
+                        <p data-i18n="price_5_desc">Зависит от сложности задачи.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fa-solid fa-calendar-check" aria-hidden="true"></i></div>
+                        <h3 data-i18n="price_6_title">Запись на прием</h3>
+                        <div class="price-value" data-i18n="price_6_val">15 €</div>
+                        <p data-i18n="price_6_desc">Организация записи.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="benefits">
+            <div class="container">
+                <h2 class="section-title" data-i18n="benefits_title">Наши гарантии</h2>
+                <p class="section-subtitle" data-i18n="benefits_subtitle">Качество и безопасность на каждом этапе</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+                        <h3 data-i18n="benefit_1_title">КОНФИДЕНЦИАЛЬНОСТЬ</h3>
+                        <p data-i18n="benefit_1_desc">ГАРАНТИРОВАНА</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></div>
+                        <h3 data-i18n="benefit_2_title">УСТНЫЙ ПЕРЕВОД</h3>
+                        <p data-i18n="benefit_2_desc">БЕЗ БАРЬЕРОВ</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></div>
+                        <h3 data-i18n="benefit_3_title">БЕРЛИН</h3>
+                        <p data-i18n="benefit_3_desc">И ОКРЕСТНОСТИ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container about-container">
+                <div class="about-text">
+                    <h2 class="section-title" data-i18n="about_title">Помогаю людям из разных стран</h2>
+                    <p data-i18n="about_desc_1">С уважением, терпением и вниманием подхожу к каждой задаче. Моя цель — сделать так, чтобы языковой барьер не мешал вам в Германии.</p>
+                    <p data-i18n="about_desc_2">Работаю с государственными ведомствами, медицинскими учреждениями и помогаю с повседневной бюрократией.</p>
+                </div>
+                <div class="about-card-info">
+                    <div class="info-badge">
+                        <span class="info-number"><i class="fa-solid fa-heart" style="color: var(--accent-color);" aria-hidden="true"></i></span>
+                        <span data-i18n="info_oral">Ваш надежный языковой помощник в любых ситуациях</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2 class="section-title" data-i18n="contact_title">Свяжитесь со мной</h2>
+                        <p class="section-subtitle">Оставьте заявку, и я помогу вам разобраться с языковыми вопросами быстро и надежно.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                <span>Берлин и окрестности</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                <a href="tel:+4915756459556">+49 1575 6459556</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <a href="mailto:kraynova1@gmx.de">kraynova1@gmx.de</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <form id="appointmentForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="name" data-i18n="form_name">Ваше имя</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-user" aria-hidden="true"></i>
+                                    <input type="text" id="name" required placeholder="Ваше имя">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact_info" data-i18n="form_phone">Телефон или Email</label>
+                                <div class="input-with-icon">
+                                    <i class="fa-solid fa-address-book" aria-hidden="true"></i>
+                                    <input type="text" id="contact_info" required placeholder="+49 ... / email@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="topicSelect" data-i18n="form_topic">Тема обращения</label>
+                                <div class="custom-select-wrapper">
+                                    <i class="fa-solid fa-list-check select-icon" aria-hidden="true"></i>
+                                    <select id="topicSelect">
+                                        <option value="topic_1">Государственные учреждения</option>
+                                        <option value="topic_2">Медицинские учреждения</option>
+                                        <option value="topic_3">Заполнение документов</option>
+                                        <option value="topic_4">Телефонные переговоры</option>
+                                        <option value="topic_5">Другой вопрос</option>
+                                    </select>
+                                    <i class="fa-solid fa-chevron-down arrow-icon" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-full" data-i18n="form_submit">Отправить заявку</button>
+                            <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <div class="container footer-content">
-            <p>&copy; 2026 YanaTranslator. All rights reserved.</p>
-            <a href="#" class="back-to-top" title="Наверх"><i class="fa-solid fa-arrow-up"></i></a>
+            <p>&copy; 2026 kraynova1@gmx.de | +49 1575 6459556</p>
+            <a href="#" class="back-to-top" title="Наверх" aria-label="Наверх"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></a>
         </div>
     </footer>
 

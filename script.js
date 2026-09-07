@@ -1,162 +1,254 @@
-// translations.js and main script logic
 const translations = {
     ru: {
         nav_services: "Услуги",
         nav_pricing: "Цены",
-        nav_benefits: "Почему мы",
-        nav_about: "О нас",
+        nav_benefits: "Преимущества",
+        nav_about: "Обо мне",
         nav_contact: "Контакты",
-        btn_term: "Записаться",
-        hero_badge: "⚡ Профессиональный устный перевод в Германии",
-        hero_title: "Точный устный перевод для вашего бизнеса и встреч",
-        hero_subtitle: "Синхронный и последовательный перевод на переговорах, сделках и онлайн-конференциях. Опытная команда дипломированных специалистов.",
-        btn_call: "Связаться с нами",
-        btn_phone: "Позвонить сейчас",
+        btn_term: "Связаться",
+        hero_badge: "📍 Берлин и окрестности",
+        hero_title: "ПЕРЕВОДЧИК В БЕРЛИНЕ",
+        hero_subtitle: "Сопровождаю и помогаю решить языковые вопросы быстро, понятно и надежно. Ваш надежный языковой помощник в любых ситуациях.",
+        btn_call: "Позвонить",
+        btn_phone: "01575 6459556",
         
-        services_title: "Наши услуги",
-        services_subtitle: "Специализируемся исключительно на устном переводе высокого уровня",
-        service_1_title: "Последовательный перевод",
-        service_1_desc: "Для деловых переговоров, встреч с партнерами, нотариальных сделок и консультаций.",
-        service_2_title: "Синхронный перевод",
-        service_2_desc: "Для крупных конференций, семинаров, презентаций и официальных мероприятий.",
-        service_3_title: "Онлайн-сопровождение",
-        service_3_desc: "Оперативный устный перевод удаленно через Zoom, MS Teams и телефонную связь.",
+        services_title: "Направления помощи",
+        services_subtitle: "Помогаю людям из разных стран с уважением, терпением и вниманием",
+        service_1_title: "СОПРОВОЖДЕНИЕ В ГОСУДАРСТВЕННЫЕ УЧРЕЖДЕНИЯ",
+        service_1_desc: "Jobcenter, Ausländerbehörde, Sozialamt, Jugendamt и другие.",
+        service_2_title: "СОПРОВОЖДЕНИЕ В МЕДИЦИНСКИЕ УЧРЕЖДЕНИЯ",
+        service_2_desc: "Врачи, клиники, больницы, психологи и другие специалисты.",
+        service_3_title: "ЗАПОЛНЕНИЕ ДОКУМЕНТОВ",
+        service_3_desc: "Заявления, анкеты, формуляры и многое другое.",
+        service_4_title: "ТЕЛЕФОННЫЕ ПЕРЕГОВОРЫ",
+        service_4_desc: "Перевод звонков, уточнение информации, запись на приём и др.",
         
         pricing_title: "Стоимость услуг",
-        pricing_subtitle: "Прозрачные тарифы на устный перевод без скрытых платежей",
+        pricing_subtitle: "Прозрачные тарифы без скрытых платежей",
         price_1_title: "Почасовая оплата",
-        price_1_val: "от 00 € / час",
-        price_1_desc: "Минимальный заказ — 2 часа. Отлично подходит для кратковременных встреч и сделок.",
-        price_2_title: "Дневной тариф (Full Day)",
-        price_2_val: "от 000 € / день",
-        price_2_desc: "Выгодное решение для полноценного сопровождения мероприятий, конференций и переговоров.",
-        price_3_title: "Онлайн-формат",
-        price_3_val: "от 00 € / час",
-        price_3_desc: "Оперативное удаленное подключение к видеоконференциям, звонкам и сессиям Zoom/Teams.",
+        price_1_val: "30 € / час",
+        price_1_desc: "Стандартный тариф за час работы.",
+        price_2_title: "Дневной тариф",
+        price_2_val: "200 € / день",
+        price_2_desc: "8 часов сопровождения с одним человеком.",
+        price_3_title: "Синхронный перевод",
+        price_3_val: "250 €",
+        price_3_desc: "Требуется команда из 2 человек.",
+        price_4_title: "Онлайн перевод",
+        price_4_val: "25 € / час",
+        price_4_desc: "Удаленный перевод и консультации.",
+        price_5_title: "Заполнение документов",
+        price_5_val: "20 – 50 €",
+        price_5_desc: "Зависит от сложности задачи.",
+        price_6_title: "Запись на прием",
+        price_6_val: "15 €",
+        price_6_desc: "Организация записи.",
 
-        benefits_title: "Почему выбирают нас",
-        benefits_subtitle: "Надежность, оперативность и строгая конфиденциальность",
-        benefit_1_title: "Опытная команда",
-        benefit_1_desc: "Проверенные переводчики с профильным образованием и глубоким знанием терминологии.",
-        benefit_2_title: "Оперативность",
-        benefit_2_desc: "Быстро подбираем специалиста под ваш запрос и организуем работу в сжатые сроки.",
-        benefit_3_title: "Конфиденциальность",
-        benefit_3_desc: "Полная защита информации и коммерческой тайны на всех этапах сотрудничества.",
+        benefits_title: "Наши гарантии",
+        benefits_subtitle: "Качество и безопасность на каждом этапе",
+        benefit_1_title: "КОНФИДЕНЦИАЛЬНОСТЬ",
+        benefit_1_desc: "ГАРАНТИРОВАНА",
+        benefit_2_title: "УСТНЫЙ ПЕРЕВОД",
+        benefit_2_desc: "БЕЗ БАРЬЕРОВ",
+        benefit_3_title: "БЕРЛИН",
+        benefit_3_desc: "И ОКРЕСТНОСТИ",
         
-        about_title: "О нашем бюро",
-        about_desc_1: "Мы работаем в Германии и объединяем профессиональных устных переводчиков. Наша цель — обеспечить безупречную коммуникацию для вашего бизнеса и личных задач без языковых барьеров.",
-        about_desc_2: "Благодаря слаженной работе команды мы можем эффективно распределять задачи и оперативно реагировать на запросы клиентов даже в удаленном формате.",
-        info_oral: "Исключительно устный перевод (без работы с документами)",
+        about_title: "Помогаю людям из разных стран",
+        about_desc_1: "С уважением, терпением и вниманием подхожу к каждой задаче. Моя цель — сделать так, чтобы языковой барьер не мешал вам в Германии.",
+        about_desc_2: "Работаю с государственными ведомствами, медицинскими учреждениями и помогаю с повседневной бюрократией.",
+        info_oral: "Ваш надежный языковой помощник в любых ситуациях ",
         
-        contact_title: "Свяжитесь с нами",
-        contact_subtitle: "Запишитесь на консультацию или забронируйте термин по вашему вопросу. Мы ответим в ближайшее время!",
+        contact_title: "Свяжитесь со мной",
+        contact_subtitle: "Позвоните по номеру 01575 6459556 или отправьте заявку",
         form_name: "Ваше имя",
         form_phone: "Телефон или Email",
-        form_topic: "Тема / Вопрос для перевода",
-        topic_1: "Деловые переговоры",
-        topic_2: "Конференция / Семинар",
-        topic_3: "Онлайн-сопровождение (Zoom/Teams)",
-        topic_4: "Другой вопрос",
-        form_submit: "Забронировать термин",
-        form_success: "Спасибо! Ваша заявка успешно отправлена. Мы скоро свяжемся с вами."
+        form_topic: "Тема обращения",
+        topic_1: "Государственные учреждения",
+        topic_2: "Медицинские учреждения",
+        topic_3: "Заполнение документов",
+        topic_4: "Телефонные переговоры",
+        topic_5: "Другой вопрос",
+        form_submit: "Отправить заявку",
+        form_success: "Спасибо! Ваша заявка успешно отправлена."
     },
     de: {
         nav_services: "Leistungen",
         nav_pricing: "Preise",
-        nav_benefits: "Warum wir",
-        nav_about: "Über uns",
+        nav_benefits: "Vorteile",
+        nav_about: "Über mich",
         nav_contact: "Kontakt",
-        btn_term: "Termin buchen",
-        hero_badge: "⚡ Professionelles Dolmetschen in Deutschland",
-        hero_title: "Präzises Dolmetschen für Ihr Business und Ihre Meetings",
-        hero_subtitle: "Simultan- und Konsekutivdolmetschen bei Verhandlungen, Deals und Online-Konferenzen. Erfahrenes Team von diplomierten Experten.",
-        btn_call: "Kontaktieren Sie uns",
-        btn_phone: "Jetzt anrufen",
+        btn_term: "Kontaktieren",
+        hero_badge: "📍 Berlin und Umkreis",
+        hero_title: "DOLMETSCHER IN BERLIN",
+        hero_subtitle: "Begleitung und Hilfe bei sprachlichen Fragen — schnell, verständlich und zuverlässig.",
+        btn_call: "Anrufen",
+        btn_phone: "01575 6459556",
         
-        services_title: "Unsere Leistungen",
-        services_subtitle: "Wir sind exklusiv auf professionelles Dolmetschen auf hohem Niveau spezialisiert",
-        service_1_title: "Konsekutivdolmetschen",
-        service_1_desc: "Für Geschäftsverhandlungen, Partnergespräche, Notartermine und Beratungen.",
-        service_2_title: "Simultandolmetschen",
-        service_2_desc: "Für große Konferenzen, Seminare, Präsentationen und offizielle Veranstaltungen.",
-        service_3_title: "Online-Begleitung",
-        service_3_desc: "Flexibles Dolmetschen per Zoom, MS Teams und telefonische Verbindung.",
+        services_title: "Leistungen",
+        services_subtitle: "Hilfe für Menschen aus verschiedenen Ländern mit Respekt, Geduld und Aufmerksamkeit",
+        service_1_title: "BEGLEITUNG ZU BEHÖRDEN",
+        service_1_desc: "Jobcenter, Ausländerbehörde, Sozialamt, Jugendamt u.a.",
+        service_2_title: "BEGLEITUNG IN MEDIZINISCHE EINRICHTUNGEN",
+        service_2_desc: "Ärzte, Kliniken, Krankenhäuser, Psychologen u.a.",
+        service_3_title: "DOKUMENTENAUSFÜLLUNG",
+        service_3_desc: "Anträge, Fragebögen, Formulare u.v.m.",
+        service_4_title: "TELEFONGESPRÄCHE",
+        service_4_desc: "Anruf-Übersetzung, Klärung von Informationen, Terminvereinbarung u.a.",
         
-        pricing_title: "Preise & Tarife",
-        pricing_subtitle: "Transparente Tarife für das Dolmetschen ohne versteckte Kosten",
+        pricing_title: "Preise",
+        pricing_subtitle: "Transparente Tarife",
         price_1_title: "Stundensatz",
-        price_1_val: "ab 00 € / Std.",
-        price_1_desc: "Mindestauftrag — 2 Stunden. Ideal für kurze Meetings und Termine.",
-        price_2_title: "Tagessatz (Full Day)",
-        price_2_val: "ab 000 € / Tag",
-        price_2_desc: "Die optimale Lösung für Ganztagesveranstaltungen, Konferenzen und Verhandlungen.",
-        price_3_title: "Online-Format",
-        price_3_val: "ab 00 € / Std.",
-        price_3_desc: "Schnelle Remote-Zuschaltung zu Videokonferenzen, Anrufen und Zoom/Teams-Sitzungen.",
+        price_1_val: "30 € / Std.",
+        price_1_desc: "Standard-Stundentarif.",
+        price_2_title: "Tagessatz",
+        price_2_val: "200 € / Tag",
+        price_2_desc: "8 Stunden Begleitung mit einer Person.",
+        price_3_title: "Simultandolmetschen",
+        price_3_val: "250 €",
+        price_3_desc: "Erfordert ein Team von 2 Personen.",
+        price_4_title: "Online-Dolmetschen",
+        price_4_val: "25 € / Std.",
+        price_4_desc: "Remote-Übersetzung und Beratung.",
+        price_5_title: "Dokumentenausfüllung",
+        price_5_val: "20 – 50 €",
+        price_5_desc: "Je nach Komplexität.",
+        price_6_title: "Terminvereinbarung",
+        price_6_val: "15 €",
+        price_6_desc: "Organisation von Terminen.",
 
-        benefits_title: "Warum Sie uns wählen",
-        benefits_subtitle: "Zuverlässigkeit, Schnelligkeit und strikte Vertraulichkeit",
-        benefit_1_title: "Erfahrenes Team",
-        benefit_1_desc: "Geprüfte Dolmetscher mit Fachausbildung und tiefem Terminologiewissen.",
-        benefit_2_title: "Schnelligkeit",
-        benefit_2_desc: "Wir wählen schnell den passenden Experten für Ihre Anfrage und organisieren den Einsatz kurzfristig.",
-        benefit_3_title: "Vertraulichkeit",
-        benefit_3_desc: "Vollständiger Schutz von Informationen und Geschäftsgeheimnissen in allen Phasen.",
+        benefits_title: "Garantien",
+        benefits_subtitle: "Zuverlässigkeit in jeder Situation",
+        benefit_1_title: "VERTRAULICHKEIT",
+        benefit_1_desc: "GARANTIERT",
+        benefit_2_title: "DOLMETSCHEN",
+        benefit_2_desc: "OHNE BARRIEREN",
+        benefit_3_title: "BERLIN",
+        benefit_3_desc: "UND UMKREIS",
         
-        about_title: "Über unser Büro",
-        about_desc_1: "Wir arbeiten in Deutschland und vereinen professionelle Dolmetscher. Unser Ziel ist es, eine reibungslose Kommunikation für Ihr Business und Ihre persönlichen Anliegen zu gewährleisten.",
-        about_desc_2: "Dank unseres eingespielten Teams können wir Aufgaben effizient verteilen und auch im Remote-Format schnell auf Kundenwünsche reagieren.",
-        info_oral: "Ausschließlich Dolmetschen (keine Dokumentenbearbeitung)",
+        about_title: "Hilfe für Menschen aus verschiedenen Ländern",
+        about_desc_1: "Mit Respekt, Geduld und Aufmerksamkeit gehe ich an jede Aufgabe heran.",
+        about_desc_2: "Unterstützung bei Behörden, Ärzten und im Alltag.",
+        info_oral: "Ihr zuverlässiger Sprachassistent in allen Situationen",
         
-        contact_title: "Kontaktieren Sie uns",
-        contact_subtitle: "Buchen Sie eine Beratung oder einen Termin für Ihr Anliegen. Wir melden uns in Kürze!",
+        contact_title: "Kontaktieren Sie mich",
+        contact_subtitle: "Rufen Sie an unter 01575 6459556 oder schreiben Sie mir",
         form_name: "Ihr Name",
         form_phone: "Telefon oder E-Mail",
-        form_topic: "Thema / Anliegen für das Dolmetschen",
-        topic_1: "Geschäftsverhandlungen",
-        topic_2: "Konferenz / Seminar",
-        topic_3: "Online-Begleitung (Zoom/Teams)",
-        topic_4: "Anderes Anliegen",
-        form_submit: "Termin anfragen",
-        form_success: "Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns bald."
+        form_topic: "Anliegen",
+        topic_1: "Behördengänge",
+        topic_2: "Medizinische Einrichtungen",
+        topic_3: "Dokumentenausfüllung",
+        topic_4: "Telefonische Gespräche",
+        topic_5: "Anderes Anliegen",
+        form_submit: "Anfrage senden",
+        form_success: "Vielen Dank! Ihre Anfrage wurde gesendet."
     }
 };
 
-// Логика переключения языков
-document.querySelectorAll('[data-lang-switch]').forEach(button => {
-    button.addEventListener('click', () => {
-        const lang = button.getAttribute('data-lang-switch');
-        
-        document.querySelectorAll('[data-lang-switch]').forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (translations[lang][key]) {
-                el.textContent = translations[lang][key];
+function updateFormSelect(lang) {
+    const topicSelect = document.getElementById('topicSelect');
+    if (!topicSelect) return;
+    const currentVal = topicSelect.value;
+    topicSelect.innerHTML = `
+        <option value="topic_1">${translations[lang].topic_1}</option>
+        <option value="topic_2">${translations[lang].topic_2}</option>
+        <option value="topic_3">${translations[lang].topic_3}</option>
+        <option value="topic_4">${translations[lang].topic_4}</option>
+        <option value="topic_5">${translations[lang].topic_5}</option>
+    `;
+    topicSelect.value = currentVal || "topic_1";
+}
+
+function setLanguage(lang) {
+    if (!translations[lang]) lang = 'ru';
+    
+    // Сохраняем выбор в localStorage
+    localStorage.setItem('preferred_lang', lang);
+
+    document.querySelectorAll('[data-lang-switch]').forEach(btn => {
+        if (btn.getAttribute('data-lang-switch') === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+            el.textContent = translations[lang][key];
+        }
+    });
+
+    updateFormSelect(lang);
+    document.documentElement.setAttribute('lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Определяем язык (сохраненный или по умолчанию 'ru')
+    const savedLang = localStorage.getItem('preferred_lang') || 'ru';
+    setLanguage(savedLang);
+
+    // Переключение языка по кнопкам
+    document.querySelectorAll('[data-lang-switch]').forEach(button => {
+        button.addEventListener('click', () => {
+            setLanguage(button.getAttribute('data-lang-switch'));
+        });
+    });
+
+    // Логика мобильного меню (гамбургер)
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+
+    if (hamburger && nav) {
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        // Закрывать меню при клике на любую ссылку в навигации
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        });
+    }
+
+    // Обработка кликов по инлайн-кнопкам в карточках услуг
+    document.querySelectorAll('.card-inline-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetTopic = btn.getAttribute('data-topic');
+            const topicSelect = document.getElementById('topicSelect');
+            if (topicSelect && targetTopic) {
+                topicSelect.value = targetTopic;
+            }
+            const contactSection = document.getElementById('contact');
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
             }
         });
-        
-        document.documentElement.setAttribute('lang', lang);
     });
+
+    // Обработка отправки формы
+    const appointmentForm = document.getElementById('appointmentForm');
+    const formStatus = document.getElementById('formStatus');
+
+    if (appointmentForm) {
+        appointmentForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const currentLang = document.documentElement.getAttribute('lang') || 'ru';
+            const successMessage = translations[currentLang].form_success;
+            
+            if (formStatus) {
+                formStatus.textContent = successMessage;
+            }
+            appointmentForm.reset();
+            
+            setTimeout(() => {
+                if (formStatus) {
+                    formStatus.textContent = '';
+                }
+            }, 5000);
+        });
+    }
 });
-
-// Логика отправки формы записи на термин
-const appointmentForm = document.getElementById('appointmentForm');
-const formStatus = document.getElementById('formStatus');
-
-if (appointmentForm) {
-    appointmentForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        const currentLang = document.documentElement.getAttribute('lang') || 'ru';
-        const successMessage = translations[currentLang].form_success;
-        
-        formStatus.textContent = successMessage;
-        appointmentForm.reset();
-        
-        setTimeout(() => {
-            formStatus.textContent = '';
-        }, 5000);
-    });
-}
