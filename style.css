@@ -1,0 +1,524 @@
+:root {
+    --bg-color: #0f141c;        /* Глубокий благородный графитовый фон */
+    --card-bg: #161d2b;        /* Чуть светлее для карточек */
+    --card-hover: #1e273a;
+    --text-color: #f8fafc;      /* Мягкий белый для текста */
+    --text-muted: #94a3b8;      /* Приглушенный серо-голубой для описаний */
+    --accent-color: #f59e0b;    /* Теплый янтарно-золотой акцент (приятный для всех возрастов) */
+    --accent-secondary: #fbbf24;
+    --accent-gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    --font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 20, 28, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.logo-accent {
+    color: var(--accent-color);
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav a:hover {
+    color: var(--accent-color);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Lang Switcher */
+.lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--card-bg);
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lang-btn {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.lang-btn.active {
+    color: var(--accent-color);
+}
+
+.lang-divider {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+.btn-primary {
+    background: var(--accent-gradient);
+    color: #0f141c;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid rgba(245, 158, 11, 0.6);
+}
+
+.btn-outline:hover {
+    background: rgba(245, 158, 11, 0.08);
+    border-color: var(--accent-color);
+}
+
+.btn-lg {
+    padding: 14px 30px;
+    font-size: 16px;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    padding: 180px 0 120px;
+    text-align: center;
+    background: radial-gradient(circle at 50% 25%, rgba(245, 158, 11, 0.06) 0%, transparent 65%);
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--accent-color);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* General Section Titles */
+.section-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 16px;
+    margin-bottom: 50px;
+}
+
+/* Services Section */
+.services {
+    padding: 100px 0;
+    background: rgba(22, 29, 43, 0.4);
+}
+
+.services .section-title, .services .section-subtitle {
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* Стили для профессиональных иконок */
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    background: rgba(245, 158, 11, 0.1);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.05);
+    background: rgba(245, 158, 11, 0.15);
+}
+
+.service-card h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* Benefits Section (Почему мы) */
+.benefits {
+    padding: 100px 0;
+}
+
+.benefits .section-title, .benefits .section-subtitle {
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.benefit-item {
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+.benefit-icon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--accent-color);
+    background: rgba(245, 158, 11, 0.1);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.benefit-item h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.benefit-item p {
+    color: var(--text-muted);
+    font-size: 15px;
+}
+
+/* About Section */
+.about {
+    padding: 100px 0;
+    background: rgba(22, 29, 43, 0.4);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text p {
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.about-card-info {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+    text-align: center;
+}
+
+.info-badge {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.info-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+/* Contact Section */
+.contact {
+    padding: 100px 0;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-details {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: var(--text-muted);
+}
+
+.contact-details a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.contact-form-wrapper {
+    background: var(--card-bg);
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    border-color: var(--accent-color);
+}
+
+.form-status {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--accent-color);
+}
+
+/* Footer */
+.footer {
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* Адаптивность для планшетов и мобильных устройств */
+
+@media (max-width: 968px) {
+    .about-container,
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .hero-title {
+        font-size: 38px;
+    }
+    
+    .nav {
+        display: none; /* Можно будет в будущем добавить мобильное меню-гамбургер */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 140px 0 80px;
+    }
+    
+    .hero-title {
+        font-size: 32px;
+    }
+    
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .btn-lg {
+        width: 100%;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .services-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form-wrapper,
+    .about-card-info {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-container {
+        height: 70px;
+    }
+    
+    .logo {
+        font-size: 20px;
+    }
+    
+    .hero-title {
+        font-size: 26px;
+    }
+}
+/* Стили для блока цен */
+.pricing {
+    padding: 100px 0;
+}
+
+.pricing .section-title, .pricing .section-subtitle {
+    text-align: center;
+}
+
+.price-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}

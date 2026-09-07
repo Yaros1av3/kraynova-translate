@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru" data-lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YanaTranslator — Профессиональный устный перевод в Германии</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="logo">
+                <span class="logo-accent">Yana</span>Translator
+            </div>
+            <nav class="nav">
+                <a href="#services" data-i18n="nav_services">Услуги</a>
+                <a href="#pricing" data-i18n="nav_pricing">Цены</a>
+                <a href="#benefits" data-i18n="nav_benefits">Почему мы</a>
+                <a href="#about" data-i18n="nav_about">О нас</a>
+                <a href="#contact" data-i18n="nav_contact">Контакты</a>
+            </nav>
+            <div class="header-actions">
+                <div class="lang-switcher">
+                    <button class="lang-btn active" data-lang-switch="ru">RU</button>
+                    <span class="lang-divider">/</span>
+                    <button class="lang-btn" data-lang-switch="de">DE</button>
+                </div>
+                <a href="#contact" class="btn btn-primary" data-i18n="btn_term">Записаться</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Первый экран (Hero) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-badge" data-i18n="hero_badge">⚡ Профессиональный устный перевод в Германии</div>
+            <h1 class="hero-title" data-i18n="hero_title">Точный устный перевод для вашего бизнеса и встреч</h1>
+            <p class="hero-subtitle" data-i18n="hero_subtitle">Синхронный и последовательный перевод на переговорах, сделках и онлайн-конференциях. Опытная команда дипломированных специалистов.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary btn-lg" data-i18n="btn_call">Связаться с нами</a>
+                <a href="tel:+49300000000" class="btn btn-outline btn-lg" data-i18n="btn_phone">Позвонить сейчас</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Услуги -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title" data-i18n="services_title">Наши услуги</h2>
+            <p class="section-subtitle" data-i18n="services_subtitle">Специализируемся исключительно на устном переводе высокого уровня</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
+                    <h3 data-i18n="service_1_title">Последовательный перевод</h3>
+                    <p data-i18n="service_1_desc">Для деловых переговоров, встреч с партнерами, нотариальных сделок и консультаций.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3 data-i18n="service_2_title">Синхронный перевод</h3>
+                    <p data-i18n="service_2_desc">Для крупных конференций, семинаров, презентаций и официальных мероприятий.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                    <h3 data-i18n="service_3_title">Онлайн-сопровождение</h3>
+                    <p data-i18n="service_3_desc">Оперативный устный перевод удаленно через Zoom, MS Teams и телефонную связь.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Цены -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title" data-i18n="pricing_title">Стоимость услуг</h2>
+            <p class="section-subtitle" data-i18n="pricing_subtitle">Прозрачные тарифы на устный перевод без скрытых платежей</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3 data-i18n="price_1_title">Почасовая оплата</h3>
+                    <div class="price-value" data-i18n="price_1_val">от 00 € / час</div>
+                    <p data-i18n="price_1_desc">Минимальный заказ — 2 часа. Отлично подходит для кратковременных встреч и сделок.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-calendar-day"></i></div>
+                    <h3 data-i18n="price_2_title">Дневной тариф (Full Day)</h3>
+                    <div class="price-value" data-i18n="price_2_val">от 000 € / день</div>
+                    <p data-i18n="price_2_desc">Выгодное решение для полноценного сопровождения мероприятий, конференций и переговоров.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+                    <h3 data-i18n="price_3_title">Онлайн-формат</h3>
+                    <div class="price-value" data-i18n="price_3_val">от 00 € / час</div>
+                    <p data-i18n="price_3_desc">Оперативное удаленное подключение к видеоконференциям, звонкам и сессиям Zoom/Teams.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Преимущества (Почему мы) -->
+    <section id="benefits" class="benefits">
+        <div class="container">
+            <h2 class="section-title" data-i18n="benefits_title">Почему выбирают нас</h2>
+            <p class="section-subtitle" data-i18n="benefits_subtitle">Надежность, оперативность и строгая конфиденциальность</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-user-check"></i></div>
+                    <h3 data-i18n="benefit_1_title">Опытная команда</h3>
+                    <p data-i18n="benefit_1_desc">Проверенные переводчики с профильным образованием и глубоким знанием терминологии.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3 data-i18n="benefit_2_title">Оперативность</h3>
+                    <p data-i18n="benefit_2_desc">Быстро подбираем специалиста под ваш запрос и организуем работу в сжатые сроки.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 data-i18n="benefit_3_title">Конфиденциальность</h3>
+                    <p data-i18n="benefit_3_desc">Полная защита информации и коммерческой тайны на всех этапах сотрудничества.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция О нас -->
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2 class="section-title" data-i18n="about_title">О нашем бюро</h2>
+                <p data-i18n="about_desc_1">Мы работаем в Германии и объединяем профессиональных устных переводчиков. Наша цель — обеспечить безупречную коммуникацию для вашего бизнеса и личных задач без языковых барьеров.</p>
+                <p data-i18n="about_desc_2">Благодаря слаженной работе команды мы можем эффективно распределять задачи и оперативно реагировать на запросы клиентов даже в удаленном формате.</p>
+            </div>
+            <div class="about-card-info">
+                <div class="info-badge">
+                    <span class="info-number">100%</span>
+                    <span data-i18n="info_oral">Исключительно устный перевод (без работы с документами)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Контакты и Форма (Запись на термин) -->
+    <section id="contact" class="contact">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="section-title" data-i18n="contact_title">Свяжитесь с нами</h2>
+                <p data-i18n="contact_subtitle">Запишитесь на консультацию или забронируйте термин по вашему вопросу. Мы ответим в ближайшее время!</p>
+                <div class="contact-details">
+                    <p>📍 <strong>Berlin, Deutschland</strong></p>
+                    <p>📞 Телефон: <a href="tel:+49300000000">+49 (30) 000-00-00</a></p>
+                    <p>✉️ Email: <a href="mailto:info@yanatranslator.de">info@yanatranslator.de</a></p>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper">
+                <form id="appointmentForm" class="contact-form">
+                    <div class="form-group">
+                        <label data-i18n="form_name">Ваше имя</label>
+                        <input type="text" id="name" required placeholder="Иван / Hans">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form_phone">Телефон или Email</label>
+                        <input type="text" id="contact_info" required placeholder="+49 ... / email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form_topic">Тема / Вопрос для перевода</label>
+                        <select id="topic">
+                            <option value="business" data-i18n="topic_1">Деловые переговоры</option>
+                            <option value="conference" data-i18n="topic_2">Конференция / Семинар</option>
+                            <option value="online" data-i18n="topic_3">Онлайн-сопровождение (Zoom/Teams)</option>
+                            <option value="other" data-i18n="topic_4">Другой вопрос</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-full" data-i18n="form_submit">Забронировать термин</button>
+                    <p id="formStatus" class="form-status"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 YanaTranslator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
