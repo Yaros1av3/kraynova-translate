@@ -332,8 +332,8 @@ export default function ClientPage() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-amber-400 text-xs font-mono tracking-widest">
               <span>◆</span> {t.badge}
             </div>
-            <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.15]">
-              {t.title}
+            <h1 className="text-2xl sm:text-5xl font-extrabold tracking-tight text-white leading-[1.15] break-words">
+             {t.title}
             </h1>
             <p className="text-base text-neutral-400 font-normal leading-relaxed max-w-xl">
               {t.subtitle}
