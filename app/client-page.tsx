@@ -358,15 +358,24 @@ export default function ClientPage() {
           </div>
 
           <div className="lg:col-span-5">
-            <div className="p-6 rounded-2xl bg-neutral-950/60 border border-neutral-800/80 backdrop-blur-xl shadow-xl relative">
-              <h3 className="text-xs font-mono uppercase tracking-widest text-amber-400 mb-2">{t.achievementsTitle}</h3>
-              <div className="grid grid-cols-3 gap-3 pt-3 border-t border-neutral-800">
-                {t.achievements.map((item, idx) => (
-                  <div key={idx} className="text-center">
-                    <div className="text-lg font-black text-white font-mono">{item.num}</div>
-                    <div className="text-[10px] text-neutral-400 uppercase mt-0.5 tracking-wider">{item.label}</div>
-                  </div>
-                ))}
+            {/* ИСПРАВЛЕННЫЙ БЛОК ПРЕИМУЩЕСТВ (без наложения текста) */}
+            <div className="bg-gradient-to-b from-neutral-900 to-neutral-950 p-6 sm:p-8 rounded-3xl border border-neutral-800 shadow-xl">
+              <div className="text-center mb-6">
+                <h2 className="text-xs font-mono uppercase tracking-widest text-amber-400">{t.achievementsTitle}</h2>
+              </div>
+              <div className="grid grid-cols-3 gap-2 sm:gap-6 text-center divide-x divide-neutral-800/80">
+                <div className="px-1 sm:px-4">
+                  <div className="text-xl sm:text-4xl font-black text-white font-mono mb-1">100%</div>
+                  <div className="text-[10px] sm:text-xs text-neutral-400 uppercase tracking-wider leading-tight">{t.achievements[0].label}</div>
+                </div>
+                <div className="px-1 sm:px-4">
+                  <div className="text-xl sm:text-4xl font-black text-amber-400 font-mono mb-1">0%</div>
+                  <div className="text-[10px] sm:text-xs text-neutral-400 uppercase tracking-wider leading-tight">{t.achievements[1].label}</div>
+                </div>
+                <div className="px-1 sm:px-4">
+                  <div className="text-sm sm:text-2xl font-bold text-white mb-1 truncate">Berlin</div>
+                  <div className="text-[10px] sm:text-xs text-neutral-400 uppercase tracking-wider leading-tight">{t.achievements[2].label}</div>
+                </div>
               </div>
             </div>
           </div>
@@ -374,75 +383,72 @@ export default function ClientPage() {
       </section>
 
       {/* Услуги и цены */}
-      {/* Услуги и цены */}
-<section className="py-16 max-w-7xl mx-auto px-6">
-  <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
-    <h2 className="text-xs font-mono uppercase tracking-widest text-amber-400">{t.servicesSectionTitle}</h2>
-    <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">{t.servicesTitle}</h3>
-    <p className="text-sm text-neutral-400">{t.servicesSubtitle}</p>
-  </div>
-
-  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-    {t.services.map((s, idx) => {
-      // Иконки для разных категорий услуг
-      const getIcon = (cat: string) => {
-        if (cat.includes('ГОС') || cat.includes('BEHÖRDEN')) return (
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-        );
-        if (cat.includes('МЕД') || cat.includes('MEDIZIN')) return (
-          <path d="M19 14h-6v6h-2v-6H5v-2h6V6h2v6h6v2z" />
-        );
-        if (cat.includes('ФОРМ') || cat.includes('DOKUMENTE')) return (
-          <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-        );
-        return (
-          <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-        );
-      };
-
-      return (
-        <div 
-          key={idx} 
-          onClick={() => handleOpenModal(s.title)}
-          className="group relative bg-gradient-to-b from-neutral-900/90 to-neutral-950 p-6 rounded-2xl border border-neutral-800/80 hover:border-amber-500/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-[0_12px_40px_-12px_rgba(245,158,11,0.18)] cursor-pointer overflow-hidden"
-        >
-          {/* Декоративный фоновый градиент при наведении */}
-          <div className="absolute -right-12 -top-12 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all duration-500 pointer-events-none"></div>
-
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <span className="inline-block text-[9px] font-mono tracking-widest text-amber-400 uppercase px-2.5 py-1 bg-amber-500/10 rounded-md border border-amber-500/20">
-                {s.cat}
-              </span>
-              <div className="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-black transition-all duration-300">
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  {getIcon(s.cat)}
-                </svg>
-              </div>
-            </div>
-
-            <h4 className="text-base font-bold text-white mb-2.5 group-hover:text-amber-400 transition-colors leading-snug">
-              {s.title}
-            </h4>
-            <p className="text-neutral-400 text-xs leading-relaxed mb-6">
-              {s.desc}
-            </p>
-          </div>
-
-          <div className="pt-4 border-t border-neutral-800/80 flex items-center justify-between mt-auto">
-            <div>
-              <span className="text-[9px] font-mono text-neutral-500 uppercase block tracking-wider">{t.priceLabel}</span>
-              <span className="text-base font-black text-amber-400 font-mono">{s.price}</span>
-            </div>
-            <span className="px-3 py-1.5 bg-neutral-900 group-hover:bg-amber-500 text-neutral-300 group-hover:text-black text-[10px] font-bold uppercase tracking-wider rounded-lg border border-neutral-800 group-hover:border-amber-500 transition-all duration-300 shadow-sm">
-              {t.bookServiceBtn}
-            </span>
-          </div>
+      <section className="py-16 max-w-7xl mx-auto px-6">
+        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+          <h2 className="text-xs font-mono uppercase tracking-widest text-amber-400">{t.servicesSectionTitle}</h2>
+          <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">{t.servicesTitle}</h3>
+          <p className="text-sm text-neutral-400">{t.servicesSubtitle}</p>
         </div>
-      );
-    })}
-  </div>
-</section>
+
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {t.services.map((s, idx) => {
+            const getIcon = (cat: string) => {
+              if (cat.includes('ГОС') || cat.includes('BEHÖRDEN')) return (
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              );
+              if (cat.includes('МЕД') || cat.includes('MEDIZIN')) return (
+                <path d="M19 14h-6v6h-2v-6H5v-2h6V6h2v6h6v2z" />
+              );
+              if (cat.includes('ФОРМ') || cat.includes('DOKUMENTE')) return (
+                <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+              );
+              return (
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+              );
+            };
+
+            return (
+              <div 
+                key={idx} 
+                onClick={() => handleOpenModal(s.title)}
+                className="group relative bg-gradient-to-b from-neutral-900/90 to-neutral-950 p-6 rounded-2xl border border-neutral-800/80 hover:border-amber-500/60 transition-all duration-300 flex flex-col justify-between hover:-translate-y-1.5 hover:shadow-[0_12px_40px_-12px_rgba(245,158,11,0.18)] cursor-pointer overflow-hidden"
+              >
+                <div className="absolute -right-12 -top-12 w-32 h-32 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/15 transition-all duration-500 pointer-events-none"></div>
+
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="inline-block text-[9px] font-mono tracking-widest text-amber-400 uppercase px-2.5 py-1 bg-amber-500/10 rounded-md border border-amber-500/20">
+                      {s.cat}
+                    </span>
+                    <div className="w-8 h-8 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-400 group-hover:bg-amber-500 group-hover:text-black transition-all duration-300">
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        {getIcon(s.cat)}
+                      </svg>
+                    </div>
+                  </div>
+
+                  <h4 className="text-base font-bold text-white mb-2.5 group-hover:text-amber-400 transition-colors leading-snug">
+                    {s.title}
+                  </h4>
+                  <p className="text-neutral-400 text-xs leading-relaxed mb-6">
+                    {s.desc}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-neutral-800/80 flex items-center justify-between mt-auto">
+                  <div>
+                    <span className="text-[9px] font-mono text-neutral-500 uppercase block tracking-wider">{t.priceLabel}</span>
+                    <span className="text-base font-black text-amber-400 font-mono">{s.price}</span>
+                  </div>
+                  <span className="px-3 py-1.5 bg-neutral-900 group-hover:bg-amber-500 text-neutral-300 group-hover:text-black text-[10px] font-bold uppercase tracking-wider rounded-lg border border-neutral-800 group-hover:border-amber-500 transition-all duration-300 shadow-sm">
+                    {t.bookServiceBtn}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* Блок: Как мы работаем */}
       <section className="py-14 border-t border-neutral-800/40 bg-neutral-950/20">
@@ -567,14 +573,8 @@ export default function ClientPage() {
             </p>
             <div className="flex items-center gap-3 shrink-0">
               <button
-                onClick={() => { setLegalModalType('datenschutz'); setIsLegalModalOpen(true); }}
-                className="px-4 py-2 text-xs font-mono text-neutral-400 hover:text-white underline transition cursor-pointer"
-              >
-                {t.cookieSettings}
-              </button>
-              <button
                 onClick={handleAcceptCookies}
-                className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-lg shadow-amber-500/20 cursor-pointer"
+                className="px-5 py-2.5 bg-amber-500 hover:bg-amber-400 text-black text-xs font-bold uppercase tracking-wider rounded-xl transition cursor-pointer shadow-md"
               >
                 {t.cookieAccept}
               </button>
@@ -583,74 +583,104 @@ export default function ClientPage() {
         </div>
       )}
 
-      {/* Модальное окно заказа / связи */}
+      {/* МОДАЛЬНОЕ ОКНО ЗАЯВКИ С КАСТОМНЫМ ВЫПАДАЮЩИМ СПИСКОМ */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl max-h-[90vh] overflow-y-auto">
-            <button 
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-neutral-950 border border-neutral-800 w-full max-w-lg rounded-3xl p-6 sm:p-8 relative shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+            <button
               onClick={() => setIsModalOpen(false)}
-              className="absolute top-5 right-5 text-neutral-400 hover:text-white text-base font-mono cursor-pointer"
+              className="absolute top-6 right-6 w-9 h-9 bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white rounded-full flex items-center justify-center transition cursor-pointer"
             >
               ✕
             </button>
-            
-            <h3 className="text-xl font-bold text-white mb-1.5">{t.formTitle}</h3>
-            <p className="text-neutral-400 text-xs mb-5">{t.formSubtitle}</p>
+
+            <div className="mb-6">
+              <h3 className="text-xl font-bold text-white mb-2">{t.formTitle}</h3>
+              <p className="text-neutral-400 text-xs leading-relaxed">{t.formSubtitle}</p>
+            </div>
 
             {submitted ? (
-              <div className="p-5 bg-amber-500/10 border border-amber-500/30 rounded-xl text-amber-400 text-center text-xs font-medium">
-                {t.formSuccess}
+              <div className="py-12 text-center space-y-4">
+                <div className="w-16 h-16 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-full flex items-center justify-center mx-auto text-2xl">
+                  ✓
+                </div>
+                <p className="text-sm font-semibold text-white leading-relaxed px-4">{t.formSuccess}</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-3.5">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">{t.formName}</label>
-                  <input 
-                    type="text" 
-                    name="name" 
-                    required 
+                  <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">
+                    {t.formName}
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
                     placeholder={t.placeholderName}
-                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
                   />
                 </div>
+
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">{t.formContact}</label>
-                  <input 
-                    type="text" 
-                    name="contact" 
-                    required 
+                  <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">
+                    {t.formContact}
+                  </label>
+                  <input
+                    type="text"
+                    name="contact"
+                    required
                     placeholder={t.placeholderContact}
-                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors"
                   />
                 </div>
+
+                {/* КАСТОМНЫЙ SELECT ВМЕСТО СИСТЕМНОГО ОКНА */}
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">{t.formService}</label>
-                  <select 
-                    name="service"
-                    value={selectedService}
-                    onChange={(e) => setSelectedService(e.target.value)}
-                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition cursor-pointer"
-                  >
-                    {t.services.map((s, i) => (
-                      <option key={i} value={s.title}>{s.title} ({s.price})</option>
-                    ))}
-                  </select>
+                  <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">
+                    {t.formService}
+                  </label>
+                  <div className="relative">
+                    <select
+                      name="service"
+                      value={selectedService}
+                      onChange={(e) => setSelectedService(e.target.value)}
+                      className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3.5 text-sm text-white appearance-none focus:outline-none focus:border-amber-500 transition-colors cursor-pointer pr-10"
+                    >
+                      {t.services.map((s, idx) => (
+                        <option key={idx} value={s.title} className="bg-neutral-900 text-white py-2">
+                          {s.title} ({s.price})
+                        </option>
+                      ))}
+                      <option value="Другой вопрос / Консультация" className="bg-neutral-900 text-white py-2">
+                        {lang === 'ru' ? 'Другой вопрос / Консультация' : 'Andere Frage / Beratung'}
+                      </option>
+                    </select>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-neutral-400">
+                      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                      </svg>
+                    </div>
+                  </div>
                 </div>
+
                 <div>
-                  <label className="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1">{t.formMessage}</label>
-                  <textarea 
-                    name="message" 
+                  <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">
+                    {t.formMessage}
+                  </label>
+                  <textarea
+                    name="message"
                     rows={3}
                     placeholder={t.placeholderMessage}
-                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition resize-none"
+                    className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition-colors resize-none"
                   ></textarea>
                 </div>
-                <button 
-                  type="submit" 
+
+                <button
+                  type="submit"
                   disabled={loading}
-                  className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-lg shadow-amber-500/20 cursor-pointer disabled:opacity-50"
+                  className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase tracking-widest rounded-xl transition cursor-pointer shadow-lg shadow-amber-500/20 disabled:opacity-50"
                 >
-                  {loading ? '...' : t.formSubmit}
+                  {loading ? "..." : t.formSubmit}
                 </button>
               </form>
             )}
@@ -658,41 +688,43 @@ export default function ClientPage() {
         </div>
       )}
 
-      {/* Модальное окно добавления отзыва */}
+      {/* МОДАЛЬНОЕ ОКНО ОТЗЫВОВ */}
       {isTestimonialModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 sm:p-8 max-w-md w-full relative shadow-2xl">
-            <button 
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-neutral-950 border border-neutral-800 w-full max-w-md rounded-3xl p-6 relative shadow-2xl">
+            <button
               onClick={() => setIsTestimonialModalOpen(false)}
-              className="absolute top-5 right-5 text-neutral-400 hover:text-white text-base font-mono cursor-pointer"
+              className="absolute top-6 right-6 w-9 h-9 bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white rounded-full flex items-center justify-center transition cursor-pointer"
             >
               ✕
             </button>
-            <h3 className="text-xl font-bold text-white mb-1.5">{t.testimonialModalTitle}</h3>
-            <form onSubmit={handleAddTestimonial} className="space-y-4 mt-4">
+            <h3 className="text-xl font-bold text-white mb-4">{t.testimonialModalTitle}</h3>
+            <form onSubmit={handleAddTestimonial} className="space-y-4">
               <div>
-                <input 
-                  type="text" 
-                  value={newReviewName} 
-                  onChange={(e) => setNewReviewName(e.target.value)} 
-                  placeholder={t.testimonialNamePlaceholder} 
+                <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">{t.testimonialNamePlaceholder}</label>
+                <input
+                  type="text"
                   required
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition"
+                  value={newReviewName}
+                  onChange={(e) => setNewReviewName(e.target.value)}
+                  placeholder="Иван М."
+                  className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500"
                 />
               </div>
               <div>
-                <textarea 
-                  value={newReviewText} 
-                  onChange={(e) => setNewReviewText(e.target.value)} 
-                  placeholder={t.testimonialTextPlaceholder} 
-                  rows={4}
+                <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">{t.testimonialTextPlaceholder}</label>
+                <textarea
                   required
-                  className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 transition resize-none"
+                  rows={4}
+                  value={newReviewText}
+                  onChange={(e) => setNewReviewText(e.target.value)}
+                  placeholder="..."
+                  className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 resize-none"
                 ></textarea>
               </div>
-              <button 
-                type="submit" 
-                className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase tracking-wider rounded-xl transition cursor-pointer"
+              <button
+                type="submit"
+                className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase tracking-widest rounded-xl transition cursor-pointer"
               >
                 {t.submitTestimonial}
               </button>
@@ -701,35 +733,38 @@ export default function ClientPage() {
         </div>
       )}
 
-      {/* Модальное окно правовой информации (Impressum / Datenschutz) */}
+      {/* МОДАЛЬНОЕ ОКНО LEGAL (Impressum / Datenschutz) */}
       {isLegalModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div className="bg-neutral-950 border border-neutral-800 rounded-2xl p-6 sm:p-8 max-w-xl w-full relative shadow-2xl max-h-[80vh] overflow-y-auto">
-            <button 
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-fadeIn">
+          <div className="bg-neutral-950 border border-neutral-800 w-full max-w-2xl rounded-3xl p-6 sm:p-8 relative shadow-2xl max-h-[85vh] overflow-y-auto">
+            <button
               onClick={() => setIsLegalModalOpen(false)}
-              className="absolute top-5 right-5 text-neutral-400 hover:text-white text-base font-mono cursor-pointer"
+              className="absolute top-6 right-6 w-9 h-9 bg-neutral-900 hover:bg-neutral-800 text-neutral-400 hover:text-white rounded-full flex items-center justify-center transition cursor-pointer"
             >
               ✕
             </button>
-            <h3 className="text-lg font-bold text-white mb-4">
-              {legalModalType === 'impressum' ? t.impressumTitle : t.datenschutzTitle}
-            </h3>
-            <div className="text-xs text-neutral-300 space-y-3 leading-relaxed font-mono">
-              {legalModalType === 'impressum' ? (
-                <>
-                  <p><strong>Angaben gemäß § 5 TMG:</strong></p>
-                  <p>Kraynova Translate<br />Berlin, Deutschland</p>
-                  <p><strong>Kontakt:</strong><br />Telefon: {t.phone}<br />E-Mail: {t.email}</p>
-                  <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Kraynova Translate.</p>
-                </>
-              ) : (
-                <>
-                  <p><strong>Datenschutzerklärung</strong></p>
-                  <p>Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (z. B. Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis.</p>
-                  <p>Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.</p>
-                </>
-              )}
-            </div>
+            
+            {legalModalType === 'impressum' ? (
+              <div className="space-y-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                <h3 className="text-xl font-bold text-white mb-4">Impressum</h3>
+                <p className="font-semibold text-white">Angaben gemäß § 5 TMG</p>
+                <p>Verantwortlich für den Inhalt:<br />Kraynova Translate<br />Berlin, Deutschland</p>
+                <p className="font-semibold text-white pt-2">Kontakt:</p>
+                <p>Telefon: {t.phone}<br />E-Mail: {t.email}</p>
+                <p className="font-semibold text-white pt-2">Haftungsausschluss:</p>
+                <p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p>
+              </div>
+            ) : (
+              <div className="space-y-4 text-xs sm:text-sm text-neutral-300 leading-relaxed">
+                <h3 className="text-xl font-bold text-white mb-4">Datenschutzerklärung</h3>
+                <p className="font-semibold text-white">1. Datenschutz auf einen Blick</p>
+                <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen.</p>
+                <p className="font-semibold text-white pt-2">2. Datenerfassung auf unserer Website</p>
+                <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Datenschutzerklärung entnehmen. Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z.B. über das Kontaktformular).</p>
+                <p className="font-semibold text-white pt-2">3. SSL- bzw. TLS-Verschlüsselung</p>
+                <p>Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung.</p>
+              </div>
+            )}
           </div>
         </div>
       )}
