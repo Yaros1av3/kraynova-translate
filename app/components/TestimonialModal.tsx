@@ -9,6 +9,8 @@ interface TestimonialModalProps {
   text: string;
   onTextChange: (value: string) => void;
   onSubmit: (e: React.FormEvent) => void;
+  submitted: boolean;
+  loading: boolean;
 }
 
 export default function TestimonialModal({
@@ -19,7 +21,9 @@ export default function TestimonialModal({
   onNameChange,
   text,
   onTextChange,
-  onSubmit
+  onSubmit,
+  submitted,
+  loading
 }: TestimonialModalProps) {
   if (!open) return null;
 
@@ -33,36 +37,47 @@ export default function TestimonialModal({
           ✕
         </button>
         <h3 className="text-xl font-bold text-white mb-4">{t.testimonialModalTitle}</h3>
-        <form onSubmit={onSubmit} className="space-y-4">
-          <div>
-            <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">{t.testimonialNamePlaceholder}</label>
-            <input
-              type="text"
-              required
-              value={name}
-              onChange={(e) => onNameChange(e.target.value)}
-              placeholder="Иван М."
-              className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500"
-            />
+
+        {submitted ? (
+          <div className="py-10 text-center space-y-4">
+            <div className="w-16 h-16 bg-amber-500/10 border border-amber-500/30 text-amber-400 rounded-full flex items-center justify-center mx-auto text-2xl">
+              ✓
+            </div>
+            <p className="text-sm font-semibold text-white leading-relaxed px-2">{t.testimonialSuccess}</p>
           </div>
-          <div>
-            <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">{t.testimonialTextPlaceholder}</label>
-            <textarea
-              required
-              rows={4}
-              value={text}
-              onChange={(e) => onTextChange(e.target.value)}
-              placeholder="..."
-              className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 resize-none"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase tracking-widest rounded-xl transition cursor-pointer"
-          >
-            {t.submitTestimonial}
-          </button>
-        </form>
+        ) : (
+          <form onSubmit={onSubmit} className="space-y-4">
+            <div>
+              <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">{t.testimonialNamePlaceholder}</label>
+              <input
+                type="text"
+                required
+                value={name}
+                onChange={(e) => onNameChange(e.target.value)}
+                placeholder="Иван М."
+                className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500"
+              />
+            </div>
+            <div>
+              <label className="block text-xs font-mono text-neutral-400 uppercase tracking-wider mb-2">{t.testimonialTextPlaceholder}</label>
+              <textarea
+                required
+                rows={4}
+                value={text}
+                onChange={(e) => onTextChange(e.target.value)}
+                placeholder="..."
+                className="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500 resize-none"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs uppercase tracking-widest rounded-xl transition cursor-pointer disabled:opacity-50"
+            >
+              {loading ? "..." : t.submitTestimonial}
+            </button>
+          </form>
+        )}
       </div>
     </div>
   );

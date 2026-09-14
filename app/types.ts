@@ -54,6 +54,7 @@ export interface LangContent {
   testimonialNamePlaceholder: string;
   testimonialTextPlaceholder: string;
   submitTestimonial: string;
+  testimonialSuccess: string;
   aboutTitle: string;
   aboutText: string;
   locations: string[];

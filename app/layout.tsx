@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { detectLangFromHeaders } from "./lib/detect-lang";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -74,10 +75,12 @@ const organizationJsonLd = {
   availableLanguage: ["de", "ru"],
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const lang = await detectLangFromHeaders();
+
   return (
     <html
-      lang="de"
+      lang={lang}
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">

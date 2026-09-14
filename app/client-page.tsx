@@ -13,60 +13,48 @@ import Testimonials from './components/Testimonials';
 import Faq from './components/Faq';
 import About from './components/About';
 import Footer from './components/Footer';
-import CookieBanner from './components/CookieBanner';
 import ContactModal from './components/ContactModal';
 import TestimonialModal from './components/TestimonialModal';
 
-export default function ClientPage() {
-  const [lang, setLang] = useState<Lang>('ru');
+interface ClientPageProps {
+  /** Язык, с которым страница отрисована на сервере (по ?lang= или Accept-Language) */
+  initialLang: Lang;
+  /** Заполнено, только если ?lang= был передан явно в URL */
+  queryLang?: Lang;
+}
+
+export default function ClientPage({ initialLang, queryLang }: ClientPageProps) {
+  const [lang, setLang] = useState<Lang>(initialLang);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isTestimonialModalOpen, setIsTestimonialModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [showCookieBanner, setShowCookieBanner] = useState(false);
 
-  const [testimonials, setTestimonials] = useState(initialTestimonials);
   const [newReviewName, setNewReviewName] = useState('');
   const [newReviewText, setNewReviewText] = useState('');
+  const [testimonialSubmitted, setTestimonialSubmitted] = useState(false);
+  const [testimonialLoading, setTestimonialLoading] = useState(false);
 
   const t = content[lang];
 
   useEffect(() => {
+    if (queryLang) {
+      // Явный ?lang= в URL — запоминаем выбор пользователя и не трогаем его дальше.
+      localStorage.setItem('kraynova_lang', queryLang);
+      return;
+    }
+    // Без явного параметра — уважаем ранее сохранённый выбор пользователя,
+    // если он есть (initialLang уже корректен для первого визита за счёт SSR).
     const savedLang = localStorage.getItem('kraynova_lang');
-    if (!savedLang) {
-      const browserLang = navigator.language || (navigator as any).languages?.[0];
-      if (browserLang && browserLang.startsWith('de')) {
-        setLang('de');
-      } else {
-        setLang('ru');
-      }
-    } else {
-      setLang(savedLang as Lang);
+    if (savedLang === 'ru' || savedLang === 'de') {
+      setLang(savedLang);
     }
-
-    const saved = localStorage.getItem('kraynova_testimonials');
-    if (saved) {
-      try {
-        setTestimonials(JSON.parse(saved));
-      } catch (e) {
-        console.error(e);
-      }
-    }
-    const cookieConsent = localStorage.getItem('kraynova_cookie_consent');
-    if (!cookieConsent) {
-      setShowCookieBanner(true);
-    }
-  }, []);
+  }, [queryLang]);
 
   const handleLangToggle = (newLang: Lang) => {
     setLang(newLang);
     localStorage.setItem('kraynova_lang', newLang);
-  };
-
-  const handleAcceptCookies = () => {
-    localStorage.setItem('kraynova_cookie_consent', 'true');
-    setShowCookieBanner(false);
   };
 
   const handleOpenModal = (serviceTitle?: string) => {
@@ -110,26 +98,33 @@ export default function ClientPage() {
     }
   };
 
+  // Отзыв отправляется только автору сайта на модерацию (по e-mail через Web3Forms).
+  // Он НЕ публикуется автоматически на сайте — чтобы не показывать посетителю
+  // неправду о том, что отзыв уже виден всем остальным.
   const handleAddTestimonial = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!newReviewName.trim() || !newReviewText.trim()) return;
-
-    const updated = [{ name: newReviewName, text: newReviewText }, ...testimonials];
-    setTestimonials(updated);
-    localStorage.setItem('kraynova_testimonials', JSON.stringify(updated));
+    setTestimonialLoading(true);
 
     try {
       const reviewData = new FormData();
       reviewData.append("access_key", "840dab42-85c7-41ad-8f05-775b94b4c568");
-      reviewData.append("subject", "Новый отзыв с сайта Kraynova Translate");
+      reviewData.append("subject", "Новый отзыв с сайта Kraynova Translate (на модерацию)");
       reviewData.append("name", newReviewName);
       reviewData.append("message", newReviewText);
       await fetch("https://api.web3forms.com/submit", { method: "POST", body: reviewData });
-    } catch (err) {}
+    } catch (err) {
+      // даже при сбое сети не блокируем UX — заявка всё равно придёт на почту в большинстве случаев
+    }
 
-    setNewReviewName('');
-    setNewReviewText('');
-    setIsTestimonialModalOpen(false);
+    setTestimonialLoading(false);
+    setTestimonialSubmitted(true);
+    setTimeout(() => {
+      setTestimonialSubmitted(false);
+      setIsTestimonialModalOpen(false);
+      setNewReviewName('');
+      setNewReviewText('');
+    }, 3000);
   };
 
   return (
@@ -151,7 +146,7 @@ export default function ClientPage() {
 
       <Testimonials
         t={t}
-        testimonials={testimonials}
+        testimonials={initialTestimonials}
         onAddClick={() => setIsTestimonialModalOpen(true)}
       />
 
@@ -160,13 +155,6 @@ export default function ClientPage() {
       <About t={t} />
 
       <Footer t={t} />
-
-      <CookieBanner
-        show={showCookieBanner}
-        text={t.cookieText}
-        acceptLabel={t.cookieAccept}
-        onAccept={handleAcceptCookies}
-      />
 
       <ContactModal
         open={isModalOpen}
@@ -189,6 +177,8 @@ export default function ClientPage() {
         text={newReviewText}
         onTextChange={setNewReviewText}
         onSubmit={handleAddTestimonial}
+        submitted={testimonialSubmitted}
+        loading={testimonialLoading}
       />
     </div>
   );
