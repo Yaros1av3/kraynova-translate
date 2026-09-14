@@ -26,3 +26,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ===== Утилита для переноса длинных слов (блок "Преимущества сервиса") ===== */
+.hyphenate {
+  overflow-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+/* ===== Анимация появления модальных окон (используется как animate-fadeIn) ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}

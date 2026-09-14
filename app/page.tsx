@@ -1,4 +1,5 @@
 import ClientPage from './client-page';
+import { content } from './data/content';
 
 export const metadata = {
   title: 'Kraynova Translate — Mündlicher Übersetzungsservice Berlin',
@@ -13,6 +14,28 @@ export const metadata = {
   },
 };
 
+// FAQPage — берём немецкий вариант вопросов (совпадает с canonical-версией страницы)
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: content.de.faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
+};
+
 export default function Page() {
-  return <ClientPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <ClientPage />
+    </>
+  );
 }
