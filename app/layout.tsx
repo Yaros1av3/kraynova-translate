@@ -63,8 +63,8 @@ const organizationJsonLd = {
   priceRange: "€€",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "[УЛИЦА, ДОМ]",
-    postalCode: "[ИНДЕКС]",
+    streetAddress: "Merseburger Str. 12",
+    postalCode: "12689",
     addressLocality: "Berlin",
     addressCountry: "DE",
   },

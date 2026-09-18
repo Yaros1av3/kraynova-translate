@@ -2,11 +2,15 @@ import { Content, Testimonial } from '../types';
 
 export const content: Content = {
   de: {
-    badge: "BERLIN & UMGEBUNG",
+    badge: "BERLIN",
     title: "MÜNDLICHER ÜBERSETZUNGSDIENST",
     subtitle: "Ihr zuverlässiger Sprachhelfer in allen Situationen. Schnelle, verständliche und absolut vertrauliche Unterstützung bei Behörden und Ärzten.",
     phone: "015756459556",
     phoneHref: "+4915756459556",
+    contacts: [
+      { name: "Janina", role: "Inhaberin", phone: "015756459556", phoneHref: "+4915756459556" },
+      { name: "Alla", role: "Administratorin", phone: "017640243315", phoneHref: "+4917640243315" },
+    ],
     email: "kraynova1@gmx.de",
     servicesSectionTitle: "Preisliste & Leistungen",
     servicesTitle: "Dienstleistungen & Tarife",
@@ -33,7 +37,7 @@ export const content: Content = {
     faqTitle: "Häufig gestellte Fragen",
     faqSubtitle: "Alles, was Sie über unsere Dienstleistungen wissen müssen",
     faqs: [
-      { q: "Wie kurzfristig kann ich eine Begleitung buchen?", a: "Je nach Verfügbarkeit sind auch kurzfristige Einsätze in Berlin und Umgebung möglich. Kontaktieren Sie uns am besten direkt telefonisch oder via WhatsApp." },
+      { q: "Wie kurzfristig kann ich eine Begleitung buchen?", a: "Je nach Verfügbarkeit sind auch kurzfristige Einsätze in Berlin möglich. Kontaktieren Sie uns am besten direkt telefonisch oder via WhatsApp." },
       { q: "Welche Dokumente muss ich zum Termin mitbringen?", a: "Das hängt ganz von Ihrem Anliegen ab (z.B. Einladung vom Jobcenter, Arztrezept, Pass). Wir besprechen vorab genau, was benötigt wird." },
       { q: "Wie erfolgt die Bezahlung für die Dienstleistungen?", a: "Die Bezahlung erfolgt bequem nach erbrachter Leistung – bar vor Ort oder nach Absprache per Überweisung." },
       { q: "Ist die Beratung absolut vertraulich?", a: "Ja, zu 100%. Alle besprochenen Details und persönlichen Informationen unterliegen strengster Verschwiegenheit." }
@@ -53,7 +57,7 @@ export const content: Content = {
     achievements: [
       { num: "100%", label: "Vertraulichkeit" },
       { num: "0%", label: "Sprachbarrieren" },
-      { num: "Berlin", label: "& Umgebung" }
+      { num: "Berlin", label: "Standort" }
     ],
     formTitle: "Termin oder Rückruf anfragen",
     formSubtitle: "Füllen Sie die Daten aus und wir werden uns in Kürze mit Ihnen in Verbindung setzen.",
@@ -75,11 +79,15 @@ export const content: Content = {
     legalNotice: "Angaben gemäß § 5 TMG / Angaben zum Anbieter in Berlin."
   },
   ru: {
-    badge: "БЕРЛИН И ОКРЕСТНОСТИ",
+    badge: "БЕРЛИН",
     title: "ПЕРЕВОДЧИК В БЕРЛИНЕ",
     subtitle: "Сопровождаю и помогаю решить языковые вопросы быстро, понятно и надежно. Ваш надежный языковой помощник в любых ситуациях.",
     phone: "015756459556",
     phoneHref: "+4915756459556",
+    contacts: [
+      { name: "Яна", role: "Владелица", phone: "015756459556", phoneHref: "+4915756459556" },
+      { name: "Алла", role: "Администратор", phone: "017640243315", phoneHref: "+4917640243315" },
+    ],
     email: "kraynova1@gmx.de",
     servicesSectionTitle: "Прайс-лист & Услуги",
     servicesTitle: "Услуги и Тарифы",
@@ -106,7 +114,7 @@ export const content: Content = {
     faqTitle: "Часто задаваемые вопросы",
     faqSubtitle: "Ответы на самые популярные вопросы клиентов",
     faqs: [
-      { q: "Как быстро можно записаться на сопровождение?", a: "Мы стараемся оперативно реагировать на все запросы. Возможны срочные выезды в Берлине и окрестностях." },
+      { q: "Как быстро можно записаться на сопровождение?", a: "Мы стараемся оперативно реагировать на все запросы. Возможны срочные выезды в Берлине." },
       { q: "Нужно ли готовить документы заранее?", a: "Желательно иметь при себе все письма из ведомств или медицинские выписки, чтобы переводчик мог ознакомиться с ними перед началом." },
       { q: "Как происходит оплата за услуги?", a: "Оплата производится после оказания услуги — наличными при встрече или по предварительной договоренности банковским переводом." },
       { q: "Гарантируете ли вы конфиденциальность?", a: "Абсолютно. Вся информация строго конфиденциальна и защищена профессиональной этикой." }
@@ -126,7 +134,7 @@ export const content: Content = {
     achievements: [
       { num: "100%", label: "Конфиденциально" },
       { num: "Без", label: "Языковых барьеров" },
-      { num: "Берлин", label: "И окрестности" }
+      { num: "Берлин", label: "Локация" }
     ],
     formTitle: "Записаться на прием / Консультация",
     formSubtitle: "Заполните данные, и мы свяжемся с вами в ближайшее время.",

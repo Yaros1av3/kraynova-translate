@@ -28,12 +28,20 @@ export interface Testimonial {
   text: string;
 }
 
+export interface Contact {
+  name: string;
+  role: string;
+  phone: string;
+  phoneHref: string;
+}
+
 export interface LangContent {
   badge: string;
   title: string;
   subtitle: string;
   phone: string;
   phoneHref: string;
+  contacts: Contact[];
   email: string;
   servicesSectionTitle: string;
   servicesTitle: string;

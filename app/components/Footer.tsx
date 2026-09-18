@@ -13,22 +13,37 @@ export default function Footer({ t }: FooterProps) {
           <div>© {new Date().getFullYear()} KRAYNOVA TRANSLATE. ALL RIGHTS RESERVED.</div>
           <div className="text-[10px] text-neutral-500">{t.legalNotice} Berlin, Deutschland</div>
         </div>
-        <div className="flex flex-wrap justify-center gap-6 items-center">
-          <Link
-            href="/impressum"
-            className="hover:text-amber-400 transition cursor-pointer underline decoration-neutral-700 underline-offset-4"
-          >
-            Impressum
-          </Link>
-          <Link
-            href="/datenschutz"
-            className="hover:text-amber-400 transition cursor-pointer underline decoration-neutral-700 underline-offset-4"
-          >
-            Datenschutz
-          </Link>
-          <div className="flex gap-4 text-neutral-300">
-            <a href={`tel:${t.phoneHref}`} className="hover:text-amber-400 transition">{t.phone}</a>
+
+        <div className="flex flex-col items-center md:items-end gap-4">
+          <div className="flex flex-wrap justify-center md:justify-end gap-6 items-center">
+            <Link
+              href="/impressum"
+              className="hover:text-amber-400 transition cursor-pointer underline decoration-neutral-700 underline-offset-4"
+            >
+              Impressum
+            </Link>
+            <Link
+              href="/datenschutz"
+              className="hover:text-amber-400 transition cursor-pointer underline decoration-neutral-700 underline-offset-4"
+            >
+              Datenschutz
+            </Link>
             <a href={`mailto:${t.email}`} className="hover:text-amber-400 transition">{t.email}</a>
+          </div>
+
+          <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-1">
+            {t.contacts.map((contact, idx) => (
+              <a
+                key={idx}
+                href={`tel:${contact.phoneHref}`}
+                className="hover:text-amber-400 transition flex items-baseline gap-1.5"
+              >
+                <span className="text-neutral-500">
+                  {contact.name} ({contact.role}):
+                </span>
+                <span className="text-neutral-300">{contact.phone}</span>
+              </a>
+            ))}
           </div>
         </div>
       </div>

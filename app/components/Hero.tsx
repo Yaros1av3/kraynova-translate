@@ -1,5 +1,6 @@
 import { Lang, LangContent } from '../types';
 import Achievements from './Achievements';
+
 interface HeroProps {
   lang: Lang;
   t: LangContent;
@@ -22,15 +23,23 @@ export default function Hero({ lang, t, onOpenModal }: HeroProps) {
             {t.subtitle}
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
-            <a
-              href={`tel:${t.phoneHref}`}
-              className="px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs tracking-wider uppercase rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 flex items-center gap-2.5"
-            >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-              </svg>
-              {t.phone}
-            </a>
+            {t.contacts.map((contact, idx) => (
+              <a
+                key={idx}
+                href={`tel:${contact.phoneHref}`}
+                className={
+                  idx === 0
+                    ? "px-6 py-3.5 bg-amber-500 hover:bg-amber-400 text-black font-bold text-xs tracking-wider uppercase rounded-xl transition-all duration-300 shadow-xl shadow-amber-500/10 flex items-center gap-2.5"
+                    : "px-6 py-3.5 bg-neutral-900 hover:bg-neutral-800 text-amber-400 font-bold text-xs tracking-wider uppercase rounded-xl transition-all duration-300 border border-amber-500/40 flex items-center gap-2.5"
+                }
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+                {contact.name}
+                {idx > 0 ? ` (${contact.role})` : ''}: {contact.phone}
+              </a>
+            ))}
             <button
               onClick={onOpenModal}
               className="px-6 py-3.5 bg-neutral-900 hover:bg-neutral-800 text-neutral-200 font-semibold text-xs tracking-wider uppercase rounded-xl transition-all duration-300 border border-neutral-700/80 cursor-pointer"

@@ -28,7 +28,7 @@ export default async function Image() {
           </div>
         </div>
         <div style={{ fontSize: 28, color: '#a3a3a3', maxWidth: 900, textAlign: 'center' }}>
-          Mündlicher Übersetzungsdienst · Berlin &amp; Umgebung
+          Mündlicher Übersetzungsdienst · Berlin
         </div>
         <div style={{ display: 'flex', gap: 44, marginTop: 44 }}>
           {['100% Vertraulich', 'Behörden & Ärzte', 'RU · DE'].map((label) => (

@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-neutral-100 font-sans">
+    <div lang="de" className="min-h-screen bg-[#0a0a0c] text-neutral-100 font-sans">
       <div className="max-w-3xl mx-auto px-6 py-16">
         <Link
           href="/"
@@ -22,10 +22,10 @@ export default function ImpressumPage() {
           <section className="space-y-2">
             <h2 className="text-base font-semibold text-white">Angaben gemäß § 5 DDG</h2>
             <p>
-              Inhaberin: [ВАШЕ ИМЯ И ФАМИЛИЯ]<br />
+              Inhaberin: Ianina Machalova<br />
               Kraynova Translate<br />
-              [УЛИЦА, ДОМ]<br />
-              [ИНДЕКС] Berlin<br />
+              Merseburger Str. 12<br />
+              12689 Berlin<br />
               Deutschland
             </p>
           </section>
@@ -49,9 +49,9 @@ export default function ImpressumPage() {
           <section className="space-y-2">
             <h2 className="text-base font-semibold text-white">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
             <p>
-              [ВАШЕ ИМЯ И ФАМИЛИЯ]<br />
-              [УЛИЦА, ДОМ]<br />
-              [ИНДЕКС] Berlin
+              Ianina Machalova<br />
+              Merseburger Str. 12<br />
+              12689 Berlin
             </p>
           </section>
 

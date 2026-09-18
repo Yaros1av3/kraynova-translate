@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0c] text-neutral-100 font-sans">
+    <div lang="de" className="min-h-screen bg-[#0a0a0c] text-neutral-100 font-sans">
       <div className="max-w-3xl mx-auto px-6 py-16">
         <Link
           href="/"
@@ -26,10 +26,10 @@ export default function DatenschutzPage() {
               Verantwortliche im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:
             </p>
             <p>
-              [ВАШЕ ИМЯ И ФАМИЛИЯ]<br />
+              Ianina Machalova<br />
               Kraynova Translate<br />
-              [УЛИЦА, ДОМ]<br />
-              [ИНДЕКС] Berlin, Deutschland<br />
+              Merseburger Str. 12<br />
+              12689 Berlin, Deutschland<br />
               Telefon: <a href="tel:+4915756459556" className="text-amber-400 hover:text-amber-300 transition">015756459556</a><br />
               E-Mail: <a href="mailto:kraynova1@gmx.de" className="text-amber-400 hover:text-amber-300 transition">kraynova1@gmx.de</a>
             </p>
