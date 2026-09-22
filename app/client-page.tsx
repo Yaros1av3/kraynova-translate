@@ -71,7 +71,7 @@ export default function ClientPage({ initialLang, queryLang }: ClientPageProps) 
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
-    formData.append("access_key", "840dab42-85c7-41ad-8f05-775b94b4c568");
+    formData.append("access_key", "4f4e7308-a9e3-423b-b7b7-e54def41fea7");
     formData.append("subject", "Новая заявка с сайта Kraynova Translate");
 
     try {
@@ -108,7 +108,7 @@ export default function ClientPage({ initialLang, queryLang }: ClientPageProps) 
 
     try {
       const reviewData = new FormData();
-      reviewData.append("access_key", "840dab42-85c7-41ad-8f05-775b94b4c568");
+      reviewData.append("access_key", "4f4e7308-a9e3-423b-b7b7-e54def41fea7");
       reviewData.append("subject", "Новый отзыв с сайта Kraynova Translate (на модерацию)");
       reviewData.append("name", newReviewName);
       reviewData.append("message", newReviewText);
